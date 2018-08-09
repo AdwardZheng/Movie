@@ -19,18 +19,9 @@
     width: 110px;
     height: 110px;
     border-radius: 100%;
+    transition: 2s;
 }
 
 .authorImg img:hover {
-    animation: first 2s;
-}
-
-@keyframes first {
-    from {
-        transform: rotate(0deg) scale(1);
-    }
-
-    to {
-        transform: rotate(90deg) scale(1.5);
-    }
+    transform: rotate(360deg) scale(1.5);
 }
