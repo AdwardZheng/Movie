@@ -1,0 +1,26 @@
+.Header {
+    background-color: rgba(0,0,0,.65);
+    height: 150px;
+}
+
+.title {
+    margin-left: 15%;
+    width: 260px;
+    height: 110px;
+}
+
+.title .logo {
+    color: #66ccff;
+    height: 45px;
+    font-size: 30px;
+    line-height: 45px;
+    border-bottom: 3px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.title .dsc {
+    height: 25px;
+    line-height: 25px;
+    font-size: 20px;
+    color: white;
+}

@@ -1,0 +1,50 @@
+.headerNav {
+    background-color: rgba(0, 0, 0, .35);
+    margin-bottom: 0;
+    height: 40px;
+}
+
+.headerNav .nav {
+    margin-left: 15%;
+}
+
+.nav .item {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 20px;
+    font-size: 15px;
+    width: 70px;
+}
+
+.nav .item:hover {
+    color: #66ccff;
+    background: rgba(0, 0, 0, .35);
+}
+
+.searchWrapper {
+    position: relative;
+    margin-right: 35%;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.search {
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 30px;
+    width: 200px;
+}
+
+.searchIcon {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    right: 20px;
+
+}
