@@ -32,10 +32,10 @@ class MyApp extends Component {
                         <MyHeader/>
                     </Header>
                     <Layout>
-                        <Content>
+                        <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                             <MyContent/>
                         </Content>
-                        <Sider style={{marginRight: '100px'}} width={300} theme={'light'} onCollapse={this.onCollapse} collapsed={this.state.collapsed}>
+                        <Sider style={{marginRight: '100px'}} width={400} theme={'light'} onCollapse={this.onCollapse} collapsed={this.state.collapsed}>
                             <MySider collapsed={this.state.collapsed}/>
                         </Sider>
                     </Layout>

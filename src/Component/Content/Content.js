@@ -8,7 +8,7 @@ class Content extends PureComponent {
         const data = JSON['data'];
         console.log(data);
         return (
-            <div style={{width: 800, position: 'relative', float: 'left', marginLeft: '200px', marginTop: '50px'}}>
+            <div style={{width: 800, margin: '0 auto'}}>
                 {
                     data['articleList'].map((item, index) => (
                         <Card 
