@@ -26,7 +26,7 @@
 
 .searchWrapper {
     position: relative;
-    margin-right: 35%;
+    margin-right: 20%;
     float: right;
     height: 40px;
     line-height: 40px;
@@ -34,7 +34,7 @@
 
 .search {
     border: none;
-    height: 35px;
+    height: 40px;
     border-radius: 5px;
     padding-left: 20px;
     padding-right: 30px;
