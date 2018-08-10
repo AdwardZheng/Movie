@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "antd": "^3.8.0",
+    "axios": "^0.18.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4"
   },
+  "proxy": "https://node-douban-api.herokuapp.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

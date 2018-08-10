@@ -12,7 +12,7 @@ class Content extends PureComponent {
                 {
                     data['articleList'].map((item, index) => (
                         <Card 
-                        key={'1'}
+                        key={index}
                         bordered={false}
                         hoverable={true}
                         className={"article"}

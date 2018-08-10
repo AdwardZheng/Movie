@@ -1,31 +1,40 @@
 import React, { PureComponent } from "react";
 import { Tag, Card, Popover } from 'antd';
+import Server from '../../Server/server';
 
 class MovieTag extends PureComponent {
     constructor() {
         super();
+        this.state = {
+            movies: [],
+        }
+        Server.top250('post', {
+            start: 0,
+            count: 9,
+        }).then(result => {
+            const movies = result.data.subjects;
+
+            this.setState({
+                movies: movies,
+            });
+        });
     }
 
     render() {
-        const imgurl = "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=291050453,4137308055&fm=58&bpow=450&bpoh=600";
-        const imgurl2 = "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2504669013,2923264388&fm=58&bpow=933&bpoh=1388";
-
-        const content = (
-            
-            <Card cover={<img style={{minWidth: '100px', height: '100px'}} src={imgurl}/>}>
-            </Card>
-          );
-        const content2 = (
-        <img style={{ width: '100px',height: '100px'}} src={imgurl2}/>
+        const content = (imgurl) => (<Card cover={<img style={{width: '100px', height: '120px'}} src={imgurl}/>}/>);
+        const movieTag = (name, imgurl) => (
+            <Popover key={name} placement='top' content={content(imgurl)}>
+                <Tag style={{margin: '5px'}} color={'#f50'}>{name}</Tag>
+            </Popover>
         );
 
         return (
             <div>
-                <Card title={'Movies'} style={{width: 400, margin: '0 auto'}}>
-                    <Popover placement='topRight' content={content}>
+                <Card title={'Movies'} loading={!this.state.movies.length>0}>
+                    {/* <Popover placement='topRight' content={content}>
                         <Tag style={{margin: 5}} color={'#f50'} >教父</Tag>
                     </Popover>
-                    <Popover placement='top' content={content2}>
+                    <Popover placement='top' content={content}>
                         <Tag style={{margin: 5}} placement='top' color={'#2db7f5'}>肖申克的救赎</Tag>
                     </Popover>
                     <Popover  content={content}>
@@ -36,22 +45,10 @@ class MovieTag extends PureComponent {
                     </Popover>
                     <Popover placement='top' content={content}>
                         <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover>
+                    </Popover> */}
+                    {
+                        this.state.movies.map((item, index) => movieTag(item.title, item.images.small))
+                    }
                 </Card>
             </div>
         );
