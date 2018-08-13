@@ -2,12 +2,23 @@ import axios from "axios";
 
 const url = {
     top250: '/movie/top250',
+    in_theater: '/movie/in_theaters',
+    us_box: '/movie/us_box',
 }
 
 let server = {
-    top250: (reqType, params) => {
-        console.log(params)
+    top250: ( params) => {
         return axios(url.top250,{
+            params: params
+        });
+    },
+    in_theater: (params) => {
+        return axios(url.in_theater, {
+            params: params
+        });
+    },
+    us_box: ( params) => {
+        return axios(url.us_box, {
             params: params
         });
     }

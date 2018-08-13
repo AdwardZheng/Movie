@@ -1,7 +1,7 @@
 import  React, { PureComponent } from "react";
 import './Sider.css';
 import Person from '../PersonDsc/Person.js';
-import Movie from "../Movie/Movie.js";
+import MovieTag from "../MovieTag/MovieTag.js";
 class Sider extends PureComponent {
     constructor() {
         super();
@@ -14,7 +14,7 @@ class Sider extends PureComponent {
         return (
             <div className='sider' >
                 <Person/>
-                <Movie/>
+                <MovieTag/>
             </div>
         );
     }

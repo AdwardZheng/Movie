@@ -1,24 +1,31 @@
 import React, { PureComponent } from 'react';
 import './nav.css';
 import {Icon, Menu} from 'antd';
+import { PageContext } from "../../Context/context.js";
 
 
 class HeaderNav extends PureComponent {
+    constructor(props) {
+        super(props);
+        console.log(this.props.page);
+        console.log(this.props.context);
+    }
+
     render() {
         const { Item } = Menu;
 
         const testItem = <div className={'headerNav'}>
                             <div className={'nav'}>
-                                <div className={'item'}>
+                                <div className={'item'} onClick={() => this.handleClick('home')}>
                                     <span><Icon type="home"/>主页</span>
                                 </div>
-                                <div className={'item'}>
+                                <div className={'item'} onClick={() => this.handleClick('movie')}>
                                     <span><Icon type={'book'}/> 归档</span>
                                 </div>
-                                <div className={'item'}>
+                                <div className={'item'} onClick={() => this.handleClick('home')}>
                                     <span><Icon type={'coffee'}/> 说说</span>
                                 </div>
-                                <div className={'item'}>
+                                <div className={'item'} onClick={() => this.handleClick('movie')}>
                                     <span><Icon type={'solution'}/> 收藏</span>
                                 </div>
                                 <span className={'searchWrapper'}>
@@ -29,26 +36,26 @@ class HeaderNav extends PureComponent {
                         </div>
 
         return (
-            <div>
-                <Menu style={{marginLeft: '15%', maxWidth:'500px', display: 'inline-block'}} theme='dark' mode='horizontal'>
-                    <Item key='1'>
-                        <span><Icon type="home"/>主页</span>
-                    </Item>
-                    <Item key='2'>
-                        <span><Icon type="book"/>归档</span>
-                    </Item>
-                    <Item key='3'>
-                        <span><Icon type="coffee"/>说说</span>
-                    </Item>
-                    <Item key='4'>
-                        <span><Icon type="solution"/>收藏</span>
-                    </Item>
-                </Menu>
-                <span className={'searchWrapper'}>
-                    <input placeholder={'请输入内容'} className={'search'} type="text"/>
-                    <Icon className={'searchIcon'} type={'search'}/>
-                </span>
-            </div>
+                <div>
+                    <Menu style={{marginLeft: '15%', maxWidth:'500px', display: 'inline-block'}} theme='dark' mode='horizontal'>
+                        <Item key='1' onClick={() => this.props.handleChangePage('home')}>
+                            <span><Icon type="home"/>主页</span>
+                        </Item>
+                        <Item key='2' onClick={() => this.props.handleChangePage('movie')}>
+                            <span><Icon type="book"/>归档</span>
+                        </Item>
+                        <Item key='3' onClick={() => this.props.handleChangePage('home')}>
+                            <span><Icon type="coffee"/>说说</span>
+                        </Item>
+                        <Item key='4' onClick={() => this.props.handleChangePage('movie')}>
+                            <span><Icon type="solution"/>收藏</span>
+                        </Item>
+                    </Menu>
+                    <span className={'searchWrapper'}>
+                        <input placeholder={'请输入内容'} className={'search'} type="text"/>
+                        <Icon className={'searchIcon'} type={'search'}/>
+                    </span>
+                </div>
         );
     }
 }
