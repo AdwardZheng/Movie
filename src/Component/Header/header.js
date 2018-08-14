@@ -18,7 +18,7 @@ class Header extends PureComponent {
                                 <span className={'dsc'}>记录</span>
                             </div>
                         </div>
-                        <Nav context={context} page={context.page} handleChangePage={this.props.handleChangePage} />
+                        <Nav context={context} page={context.page} handleChangeSearch = {this.props.handleChangeSearch} handleChangePage={this.props.handleChangePage} />
                     </div>
                 }
             </PageContext.Consumer>

@@ -11,6 +11,11 @@ class Movie extends PureComponent {
             movies: [],
             willShowMovies: [],
         }
+
+        Server.search({q: '一出好戏', start: 0}).then(result => {
+            console.log(result);
+            
+        })
     }
 
     componentDidMount() {
@@ -24,6 +29,7 @@ class Movie extends PureComponent {
             count: 9,
         }).then(result => {
             const movies = result.data.subjects;
+            console.log(movies);
             this.setState({
                 movies: movies,
             });
@@ -36,6 +42,7 @@ class Movie extends PureComponent {
             count: 9,
         }).then(result => {
             const movies = result.data.subjects;
+            console.log(movies);
             this.setState({
                 willShowMovies: movies,
             });

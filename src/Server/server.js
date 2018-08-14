@@ -4,6 +4,7 @@ const url = {
     top250: '/movie/top250',
     in_theater: '/movie/in_theaters',
     us_box: '/movie/us_box',
+    search: '/movie/search',
 }
 
 let server = {
@@ -21,7 +22,12 @@ let server = {
         return axios(url.us_box, {
             params: params
         });
-    }
+    },
+    search: (params) => {
+        return axios(url.search, {
+            params: params
+        });
+    },
 };
 
 // Object.keys(url).forEach((type) => {

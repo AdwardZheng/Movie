@@ -1,9 +1,30 @@
 import React, { PureComponent } from 'react';
 import './nav.css';
+import Server from "../../Server/server";
 import {Icon, Menu} from 'antd';
 
 
 class HeaderNav extends PureComponent {
+
+    constructor() {
+        super();
+
+        this.state = {
+            input: '',
+        }
+    }
+
+    handleInput = e => {
+        this.setState({
+            input: e.target.value,
+        });
+    }
+
+    handleSearch = () => {
+        this.props.handleChangeSearch(this.state.input);
+        this.props.handleChangePage('search');
+    }
+
     render() {
         const { Item } = Menu;
 
@@ -24,8 +45,8 @@ class HeaderNav extends PureComponent {
                         </Item>
                     </Menu>
                     <span className={'searchWrapper'}>
-                        <input placeholder={'请输入内容'} className={'search'} type="text"/>
-                        <Icon className={'searchIcon'} type={'search'}/>
+                        <input placeholder={'这里可以搜索电影哦'} value={this.state.input} onChange={this.handleInput} className={'search'} type="text"/>
+                        <Icon className={'searchIcon'} type={'search'}  onClick={this.handleSearch}/>
                     </span>
                 </div>
         );
