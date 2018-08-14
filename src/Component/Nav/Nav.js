@@ -1,39 +1,11 @@
 import React, { PureComponent } from 'react';
 import './nav.css';
 import {Icon, Menu} from 'antd';
-import { PageContext } from "../../Context/context.js";
 
 
 class HeaderNav extends PureComponent {
-    constructor(props) {
-        super(props);
-        console.log(this.props.page);
-        console.log(this.props.context);
-    }
-
     render() {
         const { Item } = Menu;
-
-        const testItem = <div className={'headerNav'}>
-                            <div className={'nav'}>
-                                <div className={'item'} onClick={() => this.handleClick('home')}>
-                                    <span><Icon type="home"/>主页</span>
-                                </div>
-                                <div className={'item'} onClick={() => this.handleClick('movie')}>
-                                    <span><Icon type={'book'}/> 归档</span>
-                                </div>
-                                <div className={'item'} onClick={() => this.handleClick('home')}>
-                                    <span><Icon type={'coffee'}/> 说说</span>
-                                </div>
-                                <div className={'item'} onClick={() => this.handleClick('movie')}>
-                                    <span><Icon type={'solution'}/> 收藏</span>
-                                </div>
-                                <span className={'searchWrapper'}>
-                                    <input placeholder={'请输入内容'} className={'search'} type="text"/>
-                                    <Icon className={'searchIcon'} type={'search'}/>
-                                </span>
-                            </div>
-                        </div>
 
         return (
                 <div>
@@ -48,7 +20,7 @@ class HeaderNav extends PureComponent {
                             <span><Icon type="coffee"/>说说</span>
                         </Item>
                         <Item key='4' onClick={() => this.props.handleChangePage('movie')}>
-                            <span><Icon type="solution"/>收藏</span>
+                            <span><Icon type="solution"/>电影</span>
                         </Item>
                     </Menu>
                     <span className={'searchWrapper'}>

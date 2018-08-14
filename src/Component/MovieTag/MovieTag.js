@@ -20,7 +20,7 @@ class MovieTag extends PureComponent {
     }
 
     render() {
-        const content = (imgurl) => (<img style={{width: '100px', height: '120px'}} src={imgurl}/>);
+        const content = (imgurl) => (<img style={{width: '100px', height: '120px'}} alt={'tag'} src={imgurl}/>);
         const movieTag = (name, imgurl) => (
             <Popover key={name} placement='top' content={content(imgurl)}>
                 <Tag style={{margin: '5px'}} color={'#f50'}>{name}</Tag>

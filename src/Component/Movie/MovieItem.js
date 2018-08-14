@@ -10,7 +10,7 @@ class MovieItem extends PureComponent {
                     <div style={{height: '40px'}}>
                         <span>{this.props.title}</span>
                     </div>
-                    <Rate character={<Icon type='heart'/>} allowHalf disabled value={this.props.rate/2} style={{fontSize: '10px', color: 'red',}} />
+                    <Rate character={<Icon type='heart'/>} allowHalf disabled value={Math.round(this.props.rate/2)} style={{fontSize: '10px', color: 'red',}} />
                     <br/>
                     <span>{this.props.rate}</span>
                     

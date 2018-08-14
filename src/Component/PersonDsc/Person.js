@@ -13,7 +13,7 @@ class Person extends PureComponent {
                 <Card
                     hoverable={true}
                     className='card'
-                    cover={<img src={bg}/>}>
+                    cover={<img src={bg} alt={'bg'}/>}>
                     <div className='authorImg'>
                         <img src={Ionc} alt="1"/>
                     </div>

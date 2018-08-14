@@ -18,7 +18,6 @@ class MyApp extends Component {
     }
 
     onCollapse = (collapsed, type) => {
-        console.log(type);
         this.setState({
             collapsed: collapsed,
         });
@@ -32,7 +31,6 @@ class MyApp extends Component {
 
     render() {
         const {Header, Sider, Footer, Content} = Layout;
-        console.log(this.state.page);
         return (
             <PageContext.Provider value={{page: this.state.page}}>
                 <div className="App">
