@@ -8,10 +8,10 @@ class MovieSearch extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            ...props,
+            searchName: this.props.searchName,
             movieList: [],
         };
-        console.log(this.state);
+        console.log(this.state.searchName);
     }
 
     componentDidMount() {
@@ -19,8 +19,8 @@ class MovieSearch extends PureComponent {
     }
 
     getSearchList() {
+        console.log(this.state.searchName);
         Server.search({start: 0, q: this.state.searchName}).then(result => {
-            console.log(result);
             this.setState({
                 movieList: result.data.subjects,
             });
@@ -28,7 +28,6 @@ class MovieSearch extends PureComponent {
     }
 
     render() {
-        console.log(this.state.searchName);
         return (
             <div>
                 <div className='topTitle'>
@@ -44,8 +43,7 @@ class MovieSearch extends PureComponent {
                                 <MovieItem key={index} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
                             )
                         })
-                        : <div style={{textAlign: 'center'}}><Spin size='large'/></div>
-                        
+                        : <div style={{textAlign: 'center'}}> <span>根据网络情况不同，可能会等待较长时间</span><br/><Spin size='large'/></div>
                     }
                 </div>
                 <Divider/>

@@ -10,8 +10,8 @@ class Movie extends PureComponent {
         this.state = {
             movies: [],
             willShowMovies: [],
-        }
-
+        };
+        console.log('eeeeeee');
         Server.search({q: '一出好戏', start: 0}).then(result => {
             console.log(result);
             
