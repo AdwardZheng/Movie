@@ -8,21 +8,31 @@ class MovieSearch extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            searchName: this.props.searchName,
             movieList: [],
+            loading: false,
         };
-        console.log(this.state.searchName);
+        console.log(this.props.searchName);
     }
 
     componentDidMount() {
         this.getSearchList();
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.searchName !== prevProps.searchName) {
+            this.getSearchList();
+        }
+    }
+
     getSearchList() {
-        console.log(this.state.searchName);
-        Server.search({start: 0, q: this.state.searchName}).then(result => {
+        console.log("正在请求："+this.props.searchName);
+        this.setState({
+            loading: true,
+        })
+        Server.search({start: 0, q: this.props.searchName}).then(result => {
             this.setState({
                 movieList: result.data.subjects,
+                loading: false,
             });
         });
     }
@@ -31,19 +41,19 @@ class MovieSearch extends PureComponent {
         return (
             <div>
                 <div className='topTitle'>
-                    <span>搜索结果：{this.state.searchName}</span>
+                    <span>搜索结果：{this.props.searchName}</span>
                 </div>
                 <div className='content'>
                     {
-                        this.state.movieList.length > 0 
-                        ? this.state.movieList.map((item, index) => 
+                        this.state.loading
+                        ? <div style={{textAlign: 'center'}}> <span>根据网络情况不同，可能会等待较长时间</span><br/><Spin size='large'/></div>
+                        : this.state.movieList.map((item, index) => 
                         {
 
                             return (
-                                <MovieItem key={index} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
+                                <MovieItem key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
                             )
                         })
-                        : <div style={{textAlign: 'center'}}> <span>根据网络情况不同，可能会等待较长时间</span><br/><Spin size='large'/></div>
                     }
                 </div>
                 <Divider/>

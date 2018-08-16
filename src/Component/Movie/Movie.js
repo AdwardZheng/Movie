@@ -9,7 +9,7 @@ class Movie extends PureComponent {
 
         this.state = {
             movies: [],
-            willShowMovies: [],
+            NAMovies: [],
         };
         console.log('eeeeeee');
         Server.search({q: '一出好戏', start: 0}).then(result => {
@@ -20,7 +20,7 @@ class Movie extends PureComponent {
 
     componentDidMount() {
         this.getInTheaterMovies();
-        this.getWillShowMovies();
+        this.getNAMovies();
     }
 
     getInTheaterMovies() {
@@ -36,7 +36,7 @@ class Movie extends PureComponent {
         });
     }
 
-    getWillShowMovies() {
+    getNAMovies() {
         Server.us_box({
             start: 0,
             count: 9,
@@ -44,7 +44,7 @@ class Movie extends PureComponent {
             const movies = result.data.subjects;
             console.log(movies);
             this.setState({
-                willShowMovies: movies,
+                NAMovies: movies,
             });
         })
     }
@@ -60,7 +60,7 @@ class Movie extends PureComponent {
                 <div className='content'>
                     {
                         this.state.movies.length > 0 ? this.state.movies.map( (item, index) => (
-                            <MovieItem key={index} rate={item.rating.average} imgurl={item.images.small} title={item.title}/>
+                            <MovieItem key={index} id={item.id} rate={item.rating.average} imgurl={item.images.small} title={item.title}/>
                         )): <div style={{textAlign: 'center'}}><Spin size='large'/></div>
                     }
                 </div>
@@ -70,8 +70,8 @@ class Movie extends PureComponent {
                 <Divider/>
                 <div className='content'>
                     {
-                       this.state.willShowMovies.length > 0 ? this.state.willShowMovies.map( (item, index) => (
-                            <MovieItem key={index} rate={item.subject.rating.average} imgurl={item.subject.images.small} title={item.subject.title}/>
+                       this.state.NAMovies.length > 0 ? this.state.NAMovies.map( (item, index) => (
+                            <MovieItem key={index} id={item.subject.id} rate={item.subject.rating.average} imgurl={item.subject.images.small} title={item.subject.title}/>
                         )) : <div style={{textAlign: 'center'}}><Spin  size='large'/></div>
                     }
                 </div>

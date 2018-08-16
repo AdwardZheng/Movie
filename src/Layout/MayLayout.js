@@ -27,7 +27,7 @@ class MyLayout extends PureComponent {
                     </Sider>
                 </Layout>
                 <Footer style={{textAlign: 'center', border: 0, padding: 0}}>
-                    thans for open source community@2018 By EZ
+                    thanks for open source community@2018 By AZ
                 </Footer>
             </Layout>
         );

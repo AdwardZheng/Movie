@@ -6,6 +6,7 @@ import Home from './Component/Home/home.js';
 import Movie  from './Component/Movie/Movie.js';
 import Search from './Component/Movie/MovieSearch.js';
 import MyLayout from './Layout/MayLayout';
+import MovieDetail from "./Component/Movie/MovieDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MyApp extends Component {
@@ -46,9 +47,10 @@ class MyApp extends Component {
                                     <Switch>
                                         <Route exact path="/" component={Home}/>
                                         <Route exact path="/home" component={Home}/>
-                                        <Route  path="/movie" component={Movie}/>
+                                        <Route exact path="/movie" component={Movie}/>
                                         <Route exact path="/search" component={Search}/>
                                         <Route exact path="/search/:movieName" component={Search}/>
+                                        <Route exact path="/movie/:id" component={MovieDetail}/>
                                     </Switch>
                                 </MyLayout>
                             );

@@ -5,6 +5,7 @@ const url = {
     in_theater: '/movie/in_theaters',
     us_box: '/movie/us_box',
     search: '/movie/search',
+    subject: '/movie/subject',
 }
 
 let server = {
@@ -28,6 +29,13 @@ let server = {
             params: params
         });
     },
+    subject: (id) => {
+        return axios({
+            method: 'get',
+            params: '',
+            url: url.subject + `/${id}`
+        });
+    }
 };
 
 // Object.keys(url).forEach((type) => {
