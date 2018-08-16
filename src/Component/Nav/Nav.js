@@ -50,9 +50,11 @@ class HeaderNav extends PureComponent {
                     </Menu>
                     <span className={'searchWrapper'}>
                         <input placeholder={'这里可以搜索电影哦'} value={this.state.input} onChange={this.handleInput} className={'search'} type="text"/>
-                        <Link to={'/search/'+this.state.input}>
-                            <Icon className={'searchIcon'} type={'search'} onClick={this.handleClick}/>
-                        </Link>
+                        <span onClick={this.handleClick}>
+                            <Link to={'/search/'+this.state.input}>
+                                <Icon className={'searchIcon'} type={'search'} />
+                            </Link>
+                        </span>
                     </span>
                 </div>
         );

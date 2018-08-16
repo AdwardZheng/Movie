@@ -13,9 +13,11 @@ class MovieTag extends PureComponent {
             count: 9,
         }).then(result => {
             const movies = result.data.subjects;
-            this.setState({
-                movies: movies,
-            });
+            if (movies) {
+                this.setState({
+                    movies: movies,
+                });
+            }
         });
     }
 
