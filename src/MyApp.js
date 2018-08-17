@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
-import { SearchContext } from "./Context/context";
+import { SearchContext, PageContext } from "./Context/context";
 import Home from './Component/Home/home.js';
 import Movie  from './Component/Movie/Movie.js';
 import Search from './Component/Movie/MovieSearch.js';
@@ -14,7 +14,7 @@ class MyApp extends Component {
         super();
 
         this.state = {
-            page: '',
+            page: '1',
             searchName: '',
         }
     }
@@ -36,29 +36,37 @@ class MyApp extends Component {
         });
     }
 
+    handleChangePage = page => {
+        this.setState({
+            page: page,
+        });
+    }
+
     render() {
         return (
-            <SearchContext.Provider value={{searchName: this.state.searchName, updateSearchName: this.handleChangeSearchName}}>
-                <div className="App">
-                    <Router>
-                        <Route  path="/" render={({history,location}) => {
-                            return (
-                                <MyLayout history={history} location={location}>
-                                    <Switch>
-                                        <Route exact path="/" component={Home}/>
-                                        <Route exact path="/home" component={Home}/>
-                                        <Route exact path="/movie" component={Movie}/>
-                                        <Route exact path="/search" component={Search}/>
-                                        <Route exact path="/search/:movieName" component={Search}/>
-                                        <Route exact path="/movie/:id" component={MovieDetail}/>
-                                    </Switch>
-                                </MyLayout>
-                            );
-                        }}/>
-                        
-                    </Router>
-                </div>  
-            </SearchContext.Provider>             
+            <PageContext.Provider value={{page: this.state.page, handleChangePage: this.handleChangePage}}>
+                <SearchContext.Provider value={{searchName: this.state.searchName, updateSearchName: this.handleChangeSearchName}}>
+                    <div className="App">
+                        <Router>
+                            <Route  path="/" render={({history,location}) => {
+                                return (
+                                    <MyLayout history={history} location={location}>
+                                        <Switch>
+                                            <Route exact path="/" component={Home}/>
+                                            <Route exact path="/home" component={Home}/>
+                                            <Route exact path="/movie" component={Movie}/>
+                                            <Route exact path="/search" component={Search}/>
+                                            <Route exact path="/search/:movieName" component={Search}/>
+                                            <Route exact path="/movie/:id" component={MovieDetail}/>
+                                        </Switch>
+                                    </MyLayout>
+                                );
+                            }}/>
+                            
+                        </Router>
+                    </div>  
+                </SearchContext.Provider>  
+            </PageContext.Provider>        
         );
     }
 }

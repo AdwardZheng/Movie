@@ -29,7 +29,8 @@ class MovieSearch extends PureComponent {
         this.setState({
             loading: true,
         })
-        Server.search({start: 0, q: this.props.searchName}).then(result => {
+        const searchName = this.props.searchName !== "" ? this.props.searchName : this.props.match.params.movieName;
+        Server.search({start: 0, q: searchName}).then(result => {
             if (result) {
                 this.setState({
                     movieList: result.data.subjects,
