@@ -72,7 +72,7 @@ class MovieDetail extends PureComponent {
                             <br/>
                             {
                                 detail.casts.map((item) => (
-                                    <div style={{display: 'inline-block', margin: '0 10px', textAlign: 'center'}}>
+                                    <div style={{display: 'inline-block', margin: '20px 10px 0 10px', textAlign: 'center'}}>
                                         <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+item.avatars.small.substring(7)} alt={item.name}/>
                                         <br/>
                                         <span>{item.name}</span>
