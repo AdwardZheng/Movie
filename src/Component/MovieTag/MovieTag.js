@@ -32,21 +32,6 @@ class MovieTag extends PureComponent {
         return (
             <div>
                 <Card title={'Movies'} loading={!this.state.movies.length>0}>
-                    {/* <Popover placement='topRight' content={content}>
-                        <Tag style={{margin: 5}} color={'#f50'} >教父</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} placement='top' color={'#2db7f5'}>肖申克的救赎</Tag>
-                    </Popover>
-                    <Popover  content={content}>
-                        <Tag style={{margin: 5}} color={'#87d068'}>辛德勒名单</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} color={'#108ee9'}>雨人</Tag>
-                    </Popover>
-                    <Popover placement='top' content={content}>
-                        <Tag style={{margin: 5}} >穿条纹睡衣的男孩</Tag>
-                    </Popover> */}
                     {
                         this.state.movies.map((item, index) => movieTag(item.title, item.images.small))
                     }

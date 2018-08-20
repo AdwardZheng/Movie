@@ -4,9 +4,8 @@ import {Divider, Spin } from "antd";
 import MovieItem from './MovieItem.js';
 
 class Movie extends PureComponent {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.state = {
             movies: [],
             NAMovies: [],

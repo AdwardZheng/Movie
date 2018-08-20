@@ -9,10 +9,13 @@ class Home extends PureComponent {
         return data['articleList'].map((item, index) => (
             <Card 
                 key={index}
-                bordered={false}
                 hoverable={true}
                 className={"article"}
-                type="inner">
+                type="inner"
+                style={{
+                    margin: 5
+                }}
+                >
                 <div>
                     <h3>{item['title']}</h3>
                     <p className={"tag"}>

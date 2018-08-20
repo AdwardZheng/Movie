@@ -40,12 +40,11 @@ class HeaderNav extends PureComponent {
                                     </Link>
                                 </Item>
                                 <Item key='2' onClick={() => context.handleChangePage('2')}>
-                                    <span><Icon type="book"/>归档</span>
+                                    <Link to="/say">
+                                        <span><Icon type="coffee"/>说说</span>
+                                    </Link>
                                 </Item>
                                 <Item key='3' onClick={() => context.handleChangePage('3')}>
-                                    <span><Icon type="coffee"/>说说</span>
-                                </Item>
-                                <Item key='4' onClick={() => context.handleChangePage('4')}>
                                     <Link to={'/movie'}>
                                         <span><Icon type="solution"/>电影</span>
                                     </Link>

@@ -55,10 +55,6 @@ class MovieDetail extends PureComponent {
                             <br/>
                             <span>制片地区/国家：{detail.countries.join('/')}</span>
                             <br/>
-                            <span>上映日期：</span>
-                            <br/>
-                            <span>片长：</span>
-                            <br/>
                             <span>又名：{detail.aka.join('/')}</span>
                             <br/>
                             <Rate character={<Icon type='heart'/>} allowHalf disabled value={Math.round((detail.rating.average/2)%0.5 === 0 ? detail.rating.average/2 : Math.round(detail.rating.average/2))} style={{fontSize: '10px', color: 'red', marginTop: '3px'}} />
@@ -79,11 +75,6 @@ class MovieDetail extends PureComponent {
                                     </div>
                                 ))
                             }
-                            {/* <div className={'castsImgWrap'} style={{textAlign: 'center'}}>
-                                <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+detail.casts[0].avatars.small.substring(7)} alt={detail.casts[0].name}/>
-                                <br/>
-                                <span>{detail.casts[0].name}</span>
-                            </div> */}
                         </div>
                     </div>
                 </div>
