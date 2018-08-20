@@ -19,18 +19,15 @@ class Person extends PureComponent {
                     </div>
                     <Card.Meta
                         title={
-                            <div><span className='card-title'>mingzi</span></div>
+                            <div><span className='card-title'>AdwardZ</span></div>
                         }
                         description={
                             <div>
                                 <p>
-                                    ssssssss
+                                    hahahaahahhaah
                                 </p>
                                 <p>
-                                    <span>wenzhnag</span>
-                                    <span>8</span>
-                                    <span>fangwen</span>
-                                    <span>9</span>
+                                    <span>依然行走在路上</span>
                                 </p>
                             </div>
                         }
