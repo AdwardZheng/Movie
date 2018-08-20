@@ -17,7 +17,7 @@ class MyLayout extends PureComponent {
                     <MyHeader handleChangeSearch={this.handleChangeSearch}/>
                 </Header>
                 <Layout>
-                    <Content style={{ background: '#fff', padding: 24, marginLeft: '100px', minHeight: 280 }}>
+                    <Content style={{ background: '#fff', padding: 24, marginLeft: '100px', minHeight: 900 }}>
                         <div style={{width: 800, margin: '0 auto'}}>
                             {this.props.children}
                         </div>
