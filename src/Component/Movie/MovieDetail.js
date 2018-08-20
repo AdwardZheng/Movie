@@ -16,6 +16,13 @@ class MovieDetail extends PureComponent {
         this.getMovieDetail();
     }
 
+    componentDidUpdate(prevProps) {
+        console.log(prevProps);
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            this.getMovieDetail();
+        }
+    }
+
     getMovieDetail() {
         this.setState({
             loading: true,
@@ -67,8 +74,8 @@ class MovieDetail extends PureComponent {
                             <i style={{color: '#007722', fontSize: '20px'}}>{`${detail.title}的影人......`}</i>
                             <br/>
                             {
-                                detail.casts.map((item) => (
-                                    <div style={{display: 'inline-block', margin: '20px 10px 0 10px', textAlign: 'center'}}>
+                                detail.casts.map((item, index) => (
+                                    <div key={index} style={{display: 'inline-block', margin: '20px 10px 0 10px', textAlign: 'center'}}>
                                         <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+item.avatars.small.substring(7)} alt={item.name}/>
                                         <br/>
                                         <span>{item.name}</span>

@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { Tag, Card, Popover } from 'antd';
+import { Link } from "react-router-dom";
 import Server from '../../Server/server';
 
 class MovieTag extends PureComponent {
@@ -23,17 +24,19 @@ class MovieTag extends PureComponent {
 
     render() {
         const content = (imgurl) => (<img style={{width: '100px', height: '120px'}} alt={'tag'} src={imgurl}/>);
-        const movieTag = (name, imgurl) => (
+        const movieTag = (name, imgurl, id) => (
             <Popover key={name} placement='top' content={content(imgurl)}>
-                <Tag style={{margin: '5px'}} color={'#f50'}>{name}</Tag>
+                <Link to={`/movie/${id}`}>
+                    <Tag style={{margin: '5px'}} color={'#f50'}>{name}</Tag>
+                </Link>
             </Popover>
         );
 
         return (
-            <div>
+            <div style={{marginTop: '20px'}}>
                 <Card title={'Movies'} loading={!this.state.movies.length>0}>
                     {
-                        this.state.movies.map((item, index) => movieTag(item.title, item.images.small))
+                        this.state.movies.map((item, index) => movieTag(item.title, item.images.small, item.id))
                     }
                 </Card>
             </div>
