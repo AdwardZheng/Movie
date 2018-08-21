@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
-import { Card } from 'antd';
+import { Card, Tooltip, Icon } from 'antd';
+import { Link } from "react-router-dom";
 import './Person.css';
 
 class Person extends PureComponent {
 
     render() {
-        const Ionc = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2792666611,2358009717&fm=27&gp=0.jpg";
+        const header = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2792666611,2358009717&fm=27&gp=0.jpg";
         const bg = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533792001407&di=3fbb7124316ab38db2813908b482614e&imgtype=0&src=http%3A%2F%2Fp.laozu.com%2Flaozutu%2F2016dwy%2F20160527%2F2.jpg";
 
         return (
@@ -15,7 +16,7 @@ class Person extends PureComponent {
                     className='card'
                     cover={<img src={bg} alt={'bg'}/>}>
                     <div className='authorImg'>
-                        <img src={Ionc} alt="1"/>
+                        <img src={header} alt="1"/>
                     </div>
                     <Card.Meta
                         title={
@@ -29,6 +30,12 @@ class Person extends PureComponent {
                                 <p>
                                     <span>依然行走在路上</span>
                                 </p>
+                                <Tooltip title={'github'}>
+                                    <a style={{color: 'rgba(0,0,0,0.65)'}} href="https://github.com/AdwardZheng"><Icon style={{fontSize: '25px'}} type='github'/></a>
+                                </Tooltip>
+                                <Tooltip title={'idcard'}>
+                                <Link to="/resume" style={{color: 'rgba(0,0,0,0.65)', marginLeft: '5px'}} href="https://github.com/AdwardZheng"><Icon style={{fontSize: '25px'}} type='solution'/></Link>
+                                </Tooltip>
                             </div>
                         }
                     />

@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Timeline, Icon, Spin,  } from 'antd';
+import { Timeline} from 'antd';
 import './say.css';
 
 class Say extends PureComponent {

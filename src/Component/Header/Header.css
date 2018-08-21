@@ -2,14 +2,14 @@
     background-color: rgba(0,0,0,.65);
     height: 150px;
 }
-
-.title {
+ 
+.Header .title {
     margin-left: 15%;
     width: 260px;
     height: 110px;
 }
 
-.title .logo {
+.Header .title .logo {
     color: #66ccff;
     height: 45px;
     font-size: 30px;
@@ -18,7 +18,7 @@
     border-bottom: 1px solid #ffffff;
 }
 
-.title .dsc {
+.Header .title .dsc {
     height: 25px;
     line-height: 25px;
     font-size: 20px;

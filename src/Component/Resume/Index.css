@@ -1,0 +1,66 @@
+.resume {
+    position: relative;
+    padding: 10px;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+    background-color: #85ada3;
+}
+
+.resume .headerIcon {
+    cursor: pointer;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    animation: headRotate 5s linear infinite;
+    
+}
+
+@keyframes headRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ant-carousel .slick-slide {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+
+}
+
+.resume::-webkit-scrollbar {
+    display: none;
+}
+
+.resume .next {
+    position: fixed;
+    font-size: 50px;
+    bottom: 15px;
+    color: white;
+    animation: next 2s ease infinite ;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
+@keyframes next {
+    form {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+}
+
+

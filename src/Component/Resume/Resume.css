@@ -1,0 +1,35 @@
+.resumeHeader {
+    position: relative;
+    padding: 10%;
+    width: 100%;
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.resumeHeader::-webkit-scrollbar {
+    display: none;
+}
+
+.resumeHeader .img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.resumeHeader .split {
+    width: 70%;
+    margin: 20px auto 3% auto;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.resumeHeader p {
+    font-size: 20px;
+}
+
+.resumeHeader .title {
+    margin-top: 5%;
+    font-size: 35px;
+}

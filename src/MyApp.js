@@ -8,6 +8,7 @@ import Search from './Component/Movie/MovieSearch.js';
 import MyLayout from './Layout/MayLayout';
 import MovieDetail from "./Component/Movie/MovieDetail";
 import Say from "./Component/Say/Say.js";
+import Resume from './Component/Resume/Index.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MyApp extends Component {
@@ -50,7 +51,7 @@ class MyApp extends Component {
                     <div className="App">
                         <Router>
                             <Route  path="/" render={({history,location}) => {
-                                return (
+                                return location.pathname !== "/resume" ? (
                                     <MyLayout history={history} location={location}>
                                         <Switch>
                                             <Route exact path="/" component={Home}/>
@@ -62,7 +63,7 @@ class MyApp extends Component {
                                             <Route exact path="/movie/:id" component={MovieDetail}/>
                                         </Switch>
                                     </MyLayout>
-                                );
+                                ) : <Route exact path="/resume" component={Resume}/>;
                             }}/>
                             
                         </Router>

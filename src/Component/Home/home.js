@@ -23,7 +23,7 @@ class Home extends PureComponent {
                         <span>标签：XX</span>
                         <span>浏览：XX</span>
                     </p>
-                    <a href="javascript:;"><span>{item['desc']}</span></a>
+                    <a href="javascript:;"><span style={{fontSize: '25px'}}>{item['desc']}</span></a>
                 </div>
             </Card>))
     }
