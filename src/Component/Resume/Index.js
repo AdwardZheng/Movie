@@ -6,6 +6,7 @@ import "./Index.css";
 import About from './AboutMe.js';
 import Resume from './Resume.js';
 import Skills from './SKills.js';
+import Undergo from './Undergo.js';
 
 class Index extends PureComponent {
     pagelist = [<About/>, <Resume/>];
@@ -33,6 +34,9 @@ class Index extends PureComponent {
                     </div>  
                     <div onWheel={this.handleWhell}>
                         <Skills/>
+                    </div>
+                    <div onWheel={this.handleWhell}>
+                        <Undergo/>
                     </div>
                 </Carousel>
                 <Icon className="next" type='up'/>

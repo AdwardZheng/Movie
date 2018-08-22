@@ -1,0 +1,62 @@
+.undergo {
+    height: 100vh;
+}
+
+.undergo .card{
+    margin: 0 auto 20px auto;
+    position: relative;
+    text-align: left;
+    width: 700px;
+    height: 350px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.undergo .card .react {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    animation: App-logo-spin 10s infinite linear;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+  
+
+.undergo .card .cardTitle {
+    font-size: 22px;
+    color: #8f594a;
+    font-weight: 600;
+}
+
+.undergo .card .cardRight {
+    color: #8f594a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5%;
+}
+
+.undergo .card .cardRight div {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+.undergo .card .cardRight ul {
+    margin: 0;
+    padding: 0;
+}
+
+.undergo .card .cardRight ul li {
+    margin: 5px 0;
+}
+
+.undergo .card .cardRight ul span {
+    color:  #333;
+    font-size: 16px;
+}
