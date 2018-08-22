@@ -4,7 +4,8 @@ import { Icon,Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 import "./Index.css";
 import About from './AboutMe.js';
-import Resume from './Resume';
+import Resume from './Resume.js';
+import Skills from './SKills.js';
 
 class Index extends PureComponent {
     pagelist = [<About/>, <Resume/>];
@@ -25,11 +26,14 @@ class Index extends PureComponent {
                 
                 <Carousel ref={carousel => this.carousel = carousel} infinite={false} vertical dots>                    
                     <div onWheel={this.handleWhell}>
-                    <Resume/>
+                        <Resume/>
                     </div>
                     <div onWheel={this.handleWhell}>
-                    <About/> 
+                        <About/> 
                     </div>  
+                    <div onWheel={this.handleWhell}>
+                        <Skills/>
+                    </div>
                 </Carousel>
                 <Icon className="next" type='up'/>
                 <Link to="/"><img className='headerIcon' src={header} alt="header"/></Link>
