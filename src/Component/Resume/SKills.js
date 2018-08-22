@@ -31,6 +31,13 @@ class Skills extends PureComponent {
                         ))}
                         </div>
                     </div>
+                    <div className='info'>
+                        <p>111</p>
+                        <p>222</p>
+                        <p>333</p>
+                        <p>444</p>
+                        <p>555</p>
+                    </div>
                 </div>
             </div>
         );
