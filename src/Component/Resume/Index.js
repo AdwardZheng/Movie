@@ -36,7 +36,7 @@ class Index extends PureComponent {
         const header = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2792666611,2358009717&fm=27&gp=0.jpg";
         return (
             <div className='resume'>
-                <Carousel afterChange={this.handleCurrentPage} ref={carousel => this.carousel = carousel} infinite={false} vertical dots>                    
+                <Carousel afterChange={this.handleCurrentPage} ref={carousel => this.carousel = carousel} infinite={false} vertical dots={false}>                    
                     <div onWheel={this.handleWhell}>
                         <Resume/>
                     </div>
@@ -50,8 +50,17 @@ class Index extends PureComponent {
                         <Undergo/>
                     </div>
                 </Carousel>
+                <div className='dots'>
+                {
+                    [0,1,2,3].map((item, index) => {
+                        return(
+                            <Icon onClick={() => this.carousel.goTo(index)} className={ this.state.currentPage === index ? 'curItem': 'dotItem'} type='heart' />
+                        );
+                    })
+                }
+                </div>
                 {this.state.currentPage < 3 ? <Icon onClick={() => {this.carousel.next()}} className="next" type='up'/> : null}
-                <Link to="/"><img className='headerIcon' src={header} alt="header"/></Link>
+                <Link to="/"><img className={'headerIcon'} src={header} alt="header"/></Link>
             </div>
             
         );

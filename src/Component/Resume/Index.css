@@ -63,4 +63,25 @@
     }
 }
 
+.dots {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
 
+.dots .dotItem {
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.dots .curItem {
+    display: block;
+    font-size: 20px;
+    color: aqua;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
