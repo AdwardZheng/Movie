@@ -7,6 +7,7 @@ import About from './AboutMe.js';
 import Resume from './Resume.js';
 import Skills from './SKills.js';
 import Undergo from './Undergo.js';
+import Connect from './ConnectMe.js';
 
 class Index extends PureComponent {
     constructor() {
@@ -49,10 +50,13 @@ class Index extends PureComponent {
                     <div onWheel={this.handleWhell}>
                         <Undergo/>
                     </div>
+                    <div onWheel={this.handleWhell}>
+                        <Connect/>
+                    </div>
                 </Carousel>
                 <div className='dots'>
                 {
-                    [0,1,2,3].map((item, index) => {
+                    [0,1,2,3,4].map((item, index) => {
                         return(
                             <Icon onClick={() => this.carousel.goTo(index)} className={ this.state.currentPage === index ? 'curItem': 'dotItem'} type='heart' />
                         );
