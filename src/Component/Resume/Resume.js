@@ -8,7 +8,7 @@ class Resume extends PureComponent {
             <div className='resumeHeader'>
                 <img className='img' src={header} alt="me" key="img"/>
                 <p className={'title'}>
-                    Just do it
+                    世界因计算机而美好
                 </p>
                 <div className='split'/>
                 <p>it all is</p>

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Server from '../../Server/server.js';
 import {Divider, Spin } from "antd";
-import MovieItem from './MovieItem.js';
+import MovieItem from '../../Component/Movie/MovieItem.js';
 
 class Movie extends PureComponent {
     constructor(props) {

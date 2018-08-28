@@ -53,7 +53,7 @@ class MovieDetail extends PureComponent {
                         <div className={'pic'}>
                             <img src={detail.images.small} alt={detail.title}/>
                         </div>
-                        <div className={'info'} style={{width: '500px', display: 'inline-block', verticalAlign: 'top'}}>
+                        <div className={'info'}>
                             <span>导演：{detail.directors.map( item => `${item.name}`)}</span>
                             <br/>
                             <span>主演：{detail.casts.map(item => `${item.name}`).join('/')}</span>
@@ -67,15 +67,15 @@ class MovieDetail extends PureComponent {
                             <Rate character={<Icon type='heart'/>} allowHalf disabled value={Math.round((detail.rating.average/2)%0.5 === 0 ? detail.rating.average/2 : Math.round(detail.rating.average/2))} style={{fontSize: '10px', color: 'red', marginTop: '3px'}} />
                         </div>
                         <div className={'relatedInfo'}>
-                            <i style={{color: '#007722', fontSize: '20px'}}>{`${detail.title}的简介......`}</i>
-                            <p style={{textIndent: '2em'}} >{detail.summary}</p>
+                            <i>{`${detail.title}的简介......`}</i>
+                            <p>{detail.summary}</p>
                         </div>
                         <div className={'castsInfo'}>
-                            <i style={{color: '#007722', fontSize: '20px'}}>{`${detail.title}的影人......`}</i>
+                            <i>{`${detail.title}的影人......`}</i>
                             <br/>
                             {
                                 detail.casts.map((item, index) => (
-                                    <div key={index} style={{display: 'inline-block', margin: '20px 10px 0 10px', textAlign: 'center'}}>
+                                    <div className={'item'} key={index}>
                                         <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+item.avatars.small.substring(7)} alt={item.name}/>
                                         <br/>
                                         <span>{item.name}</span>

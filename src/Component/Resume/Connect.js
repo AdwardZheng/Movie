@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Tooltip, Icon } from 'antd';
-import './ConnectMe.css';
+import './Connect.css';
 
 class Connect extends PureComponent {
 

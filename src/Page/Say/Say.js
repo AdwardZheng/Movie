@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Timeline} from 'antd';
-import './say.css';
+import './Say.css';
 
 class Say extends PureComponent {
 

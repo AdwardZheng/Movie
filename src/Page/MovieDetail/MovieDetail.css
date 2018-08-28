@@ -1,0 +1,33 @@
+.subject .pic {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.subject .pic img {
+    max-height: 180px;
+}
+
+.subject .info {
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.subject .castsInfo i {
+    color: #007722;
+    font-size: 20px;
+}
+
+.subject .castsInfo .item {
+    display: inline-block;
+    margin: 20px 10px 0 10px;
+    text-align: center;
+}
+
+.subject .relatedInfo i{
+    color: #007722;
+    font-size: 20px;
+}
+.subject p {
+    text-indent: 2em;
+}

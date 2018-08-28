@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import MovieItem from "./MovieItem";
+import MovieItem from "../../Component/Movie/MovieItem";
 import { Divider, Spin } from "antd";
 import { SearchContext } from "../../Context/context";
 import Server from '../../Server/server';

@@ -76,6 +76,22 @@
     color: #ffffff;
     margin-bottom: 10px;
     cursor: pointer;
+    opacity: 0.6;
+}
+.dots .Item0 {
+    color: #9d946d;
+ }
+.dots .Item1 {
+    color: #0e8d82;
+}
+.dots .Item2 {
+    color: #4b5b8a;
+}
+.dots .Item3 {
+    color: #925b4b;
+}
+.dots .Item4 {
+    color: #48829c;
 }
 
 .dots .curItem {
@@ -84,4 +100,5 @@
     color: aqua;
     margin-bottom: 10px;
     cursor: pointer;
+    opacity: 1;
 }

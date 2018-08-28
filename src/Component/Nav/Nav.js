@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from "react-router-dom";
-import './nav.css';
+import './Nav.css';
 import {Icon, Menu} from 'antd';
 import {SearchContext,PageContext} from '../../Context/context.js';
 

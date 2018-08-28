@@ -3,13 +3,13 @@ import { Icon,Carousel } from 'antd';
 
 import { Link } from 'react-router-dom';
 import "./Index.css";
-import About from './AboutMe.js';
-import Resume from './Resume.js';
-import Skills from './SKills.js';
-import Undergo from './Undergo.js';
-import Connect from './ConnectMe.js';
+import About from '../../Component/Resume/AboutMe.js';
+import ResumeMe from '../../Component/Resume/Resume.js';
+import Skills from '../../Component/Resume/SKills.js';
+import Undergo from '../../Component/Resume/Undergo.js';
+import Connect from '../../Component/Resume/./Connect.js';
 
-class Index extends PureComponent {
+class Resume extends PureComponent {
     constructor() {
         super();
         this.state = {
@@ -35,12 +35,11 @@ class Index extends PureComponent {
 
     render() {
         const header = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2792666611,2358009717&fm=27&gp=0.jpg";
-        const dotList =['#85ada3','#0e8d82','#4b5b8a','#925b4b','#48829c',];
         return (
             <div className='resume'>
                 <Carousel afterChange={this.handleCurrentPage} ref={carousel => this.carousel = carousel} infinite={false} vertical dots={false}>                    
                     <div onWheel={this.handleWhell}>
-                        <Resume/>
+                        <ResumeMe/>
                     </div>
                     <div onWheel={this.handleWhell}>
                         <About/> 
@@ -57,11 +56,10 @@ class Index extends PureComponent {
                 </Carousel>
                 <div className='dots'>
                 {
-                    dotList.map((item, index) => {
+                    [1,2,3,4,5].map((item, index) => {
                         return(
-                            <Icon onClick={() => this.carousel.goTo(index)} 
-                                style={{color: item}}
-                                className={ this.state.currentPage === index ? 'curItem': 'dotItem'} type='heart' />
+                            <Icon onClick={() => this.carousel.goTo(index)}
+                                className={ this.state.currentPage === index ? 'curItem': `dotItem Item${index}`} type='heart' />
                         );
                     })
                 }
@@ -74,4 +72,4 @@ class Index extends PureComponent {
     }
 }
 
-export default Index;
+export default Resume;

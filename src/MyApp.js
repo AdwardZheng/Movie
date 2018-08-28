@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
 import { SearchContext, PageContext } from "./Context/context";
-import Home from './Component/Home/home.js';
-import Movie  from './Component/Movie/Movie.js';
-import Search from './Component/Movie/MovieSearch.js';
+import Home from './Page/Home/Home.js';
+import Movie  from './Page/Movie/Movie.js';
+import Search from './Page/MovieSearch/MovieSearch.js';
 import MyLayout from './Layout/MayLayout';
-import MovieDetail from "./Component/Movie/MovieDetail";
-import Say from "./Component/Say/Say.js";
-import Resume from './Component/Resume/Index.js';
+import MovieDetail from "./Page/MovieDetail/MovieDetail";
+import Say from "./Page/Say/Say.js";
+import Resume from './Page/Resume/Resume.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class MyApp extends Component {
