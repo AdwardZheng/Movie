@@ -1,6 +1,8 @@
 # Blog
+>基于create-react-app
 
-## 一个基于React的Blog
+### 技术栈
+React，antd，axios
 
 ### 关于Redux和Context
 最开始的时候是Redux和React配合同时学习的，在试着结合Redux写了几个demo以后，有了以下几个印象（可能会有些许错误）
