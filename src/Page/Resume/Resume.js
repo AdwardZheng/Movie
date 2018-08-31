@@ -58,13 +58,13 @@ class Resume extends PureComponent {
                 {
                     [1,2,3,4,5].map((item, index) => {
                         return(
-                            <Icon onClick={() => this.carousel.goTo(index)}
+                            <Icon key={`${index}`}onClick={() => this.carousel.goTo(index)}
                                 className={ this.state.currentPage === index ? 'curItem': `dotItem Item${index}`} type='heart' />
                         );
                     })
                 }
                 </div>
-                {this.state.currentPage < 3 ? <Icon onClick={() => {this.carousel.next()}} className="next" type='up'/> : null}
+                {this.state.currentPage < 4 ? <Icon onClick={() => {this.carousel.next()}} className="next" type='up'/> : null}
                 <Link to="/"><img className={'headerIcon'} src={header} alt="header"/></Link>
             </div>
             
