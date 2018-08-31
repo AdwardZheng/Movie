@@ -8,12 +8,18 @@
 
 .skill .title {
     margin-bottom: 5%;
+    font-size: 35px;
 }
 
 .skills .info {
     display: inline-block;
     vertical-align: top;
 }
+
+.skills .info p{
+    font-size: 20px;
+}
+
 .skills .skillCircle {
     padding: 5px;
     position: relative;

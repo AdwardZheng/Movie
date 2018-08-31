@@ -9,7 +9,7 @@ class Skills extends PureComponent {
                 {color: '#f50', name: 'react'},
                 {color: '#2db7f5', name: 'react-router'},
                 {color: '#87d068', name: 'es6'},
-                {color: '#108ee9', name: 'es4'},
+                {color: '#108ee9', name: 'antd'},
                 {color: '#ffa500', name: 'java'},
             ]
         }

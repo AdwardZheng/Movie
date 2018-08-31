@@ -12,8 +12,8 @@ class Resume extends PureComponent {
                 </p>
                 <div className='split'/>
                 <p>我是AZ</p>
-                <p>一名js游戏开发者</p>
-                <p>前端那日新月异的变化既是其缺陷也是其迷人之处</p>
+                <p>目前是一名h5游戏开发者</p>
+                <p>前端那日新月异的变化既其令人苦恼也令人沉醉</p>
             </div>
         );
     }

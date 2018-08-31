@@ -14,10 +14,10 @@ class Connect extends PureComponent {
                     <span>未来</span>
                     <span>梦想</span>
                 </div>
-                <p> 善于自学，Unity,Laya,CocosCreator,变的是引擎和语言，不变的是对编程的热爱</p>
-                <p> 乐于尝试，Js,C#,Java,Lua,As,最好的一定是最合适的</p>
+                <p> 无论是游戏开发还是前端,变的是引擎和语言,不变的是对编程的热爱</p>
+                <p> 乐于尝试,新的轮子和技术总是那么令人激动</p>
                 <p> 喜欢这个日新月异的世界和互联网 </p>
-                <p> 愿和良师益友一起去看看更大的世界 </p>
+                <p> 愿为互联网贡献自己的一份力 </p>
                 <div className='connect'>
                     <Tooltip className='item' title={email}>
                         <Icon type='mail'/>
