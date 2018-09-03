@@ -25,7 +25,7 @@ class Person extends PureComponent {
                         description={
                             <div>
                                 <p>
-                                    hahahaahahhaah
+                                    一名js开发者
                                 </p>
                                 <p>
                                     <span>依然行走在路上</span>

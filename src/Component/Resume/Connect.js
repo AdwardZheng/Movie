@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Tooltip, Icon } from 'antd';
 import './Connect.css';
+import QRCode from '../../img/QRcode.jpg';
+import { height } from 'window-size';
 
 class Connect extends PureComponent {
 
@@ -22,7 +24,7 @@ class Connect extends PureComponent {
                     <Tooltip className='item' title={email}>
                         <Icon type='mail'/>
                     </Tooltip>
-                    <Tooltip className='item' title={<img src={''} alt="微信"/>}>
+                    <Tooltip className='item' title={<img style={{width: '160px', height: '200px'}} src={QRCode} alt="微信"/>}>
                         <Icon type='wechat'/>
                     </Tooltip>
                 </div>
