@@ -12,7 +12,7 @@
     position: relative;
     text-align: left;
     width: 500px;
-    height: 300px;
+    height: 370px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -25,6 +25,22 @@
     position: relative;
     width: 150px;
     animation: App-logo-spin 10s infinite linear;
+}
+
+@media screen and (max-width: 450px) {
+    .undergo .card {
+        width: 80%;
+        height: 41%;
+        margin-bottom: 5px;
+    }
+
+    .undergo .card .react {
+        width: 50px;
+    }
+
+    .undergo .title {
+        margin: 0;
+    }
 }
 
 @keyframes App-logo-spin {
@@ -43,13 +59,17 @@
     color: #8f594a;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 5%;
+    margin-top: 0;
+}
+
+.undergo .card .cardRight .cardTitle {
+    margin: 0 auto;
 }
 
 .undergo .card .cardRight div {
     font-weight: 600;
     font-size: 15px;
-    margin: 8px 0;
+    margin: 0;
 }
 
 .undergo .card .cardRight ul {
@@ -58,7 +78,7 @@
 }
 
 .undergo .card .cardRight ul li {
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .undergo .card .cardRight ul span {
