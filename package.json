@@ -10,7 +10,6 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
   },
-  "proxy": "https://node-douban-api.herokuapp.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

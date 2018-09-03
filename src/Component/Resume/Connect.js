@@ -5,7 +5,7 @@ import './Connect.css';
 class Connect extends PureComponent {
 
     render() {
-        const email = 'XXXX@qq.com'
+        const email = 'panzhengpan@163.com'
         return (
             <div className='connectMe'>
                 <p className='title'>联系我</p>

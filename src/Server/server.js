@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const url = {
-    top250: '/movie/top250',
-    in_theater: '/movie/in_theaters',
-    us_box: '/movie/us_box',
-    search: '/movie/search',
-    subject: '/movie/subject',
+    top250: 'https://node-douban-api.herokuapp.com/movie/top250',
+    in_theater: 'https://node-douban-api.herokuapp.com/movie/in_theaters',
+    us_box: 'https://node-douban-api.herokuapp.com/movie/us_box',
+    search: 'https://node-douban-api.herokuapp.com/movie/search',
+    subject: 'https://node-douban-api.herokuapp.com/movie/subject',
 }
 
 let server = {

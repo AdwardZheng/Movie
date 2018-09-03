@@ -65,7 +65,7 @@ class Resume extends PureComponent {
                 }
                 </div>
                 {this.state.currentPage < 4 ? <Icon onClick={() => {this.carousel.next()}} className="next" type='up'/> : null}
-                <Link to="/"><img className={'headerIcon'} src={header} alt="header"/></Link>
+                <Link to="/home"><img className={'headerIcon'} src={header} alt="header"/></Link>
             </div>
             
         );

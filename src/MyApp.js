@@ -62,7 +62,7 @@ class MyApp extends Component {
                                             <Route exact path="/movie/:id" component={MovieDetail}/>
                                         </Switch>
                                     </MyLayout>
-                                ) : (<Switch><Route exact path="/resume" component={Resume}/><Route exact path="/" component={Resume}/></Switch>);
+                                ) : (<div><Route exact path="/resume" component={Resume}/><Route exact path="/" component={Resume}/></div>);
                             }}/>
                             
                         </Router>
