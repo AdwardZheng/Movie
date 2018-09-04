@@ -51,7 +51,7 @@ class MyApp extends Component {
                     <div className="App">
                         <Router>
                             <Route  path="/" render={({history,location}) => {
-                                return location.pathname !== "/" ? (
+                                return (location.pathname !== "/") && (location.pathname !== "/resume") ? (
                                     <MyLayout history={history} location={location}>
                                         <Switch>
                                             <Route exact path="/home" component={Home}/>
@@ -62,7 +62,7 @@ class MyApp extends Component {
                                             <Route exact path="/movie/:id" component={MovieDetail}/>
                                         </Switch>
                                     </MyLayout>
-                                ) : (<div><Route exact path="/resume" component={Resume}/><Route exact path="/" component={Resume}/></div>);
+                                ) : (<div><Route exact path="/" component={Resume}/><Route exact path="/resume" component={Resume}/></div>);
                             }}/>
                             
                         </Router>

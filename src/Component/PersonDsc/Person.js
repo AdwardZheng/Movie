@@ -33,7 +33,7 @@ class Person extends PureComponent {
                                 <Tooltip title={'github'}>
                                     <a style={{color: 'rgba(0,0,0,0.65)'}} href="https://github.com/AdwardZheng"><Icon style={{fontSize: '25px'}} type='github'/></a>
                                 </Tooltip>
-                                <Tooltip title={'idcard'}>
+                                <Tooltip title={'简历'}>
                                 <Link to="/resume" style={{color: 'rgba(0,0,0,0.65)', marginLeft: '5px'}} href="https://github.com/AdwardZheng"><Icon style={{fontSize: '25px'}} type='solution'/></Link>
                                 </Tooltip>
                             </div>
