@@ -49,3 +49,26 @@
     line-height: 40px;
     height: 40px;
 }
+
+@media (max-width: 767px) {
+    .searchWrapper {
+        position: relative;
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 0;
+    }
+    .search {
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 30px;
+        width: 200px;
+        float: right;
+    }
+    .searchIcon {
+        position: absolute;
+        right: 0px;
+    }
+}

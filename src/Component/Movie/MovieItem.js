@@ -10,7 +10,7 @@ class MovieItem extends PureComponent {
         }
         return (
             <Link to={'/movie/' + this.props.id}>
-                <Card bordered={false} style={{width: '20%', display: 'inline-block', textAlign: 'center'}}>
+                <Card bordered={false} style={{ display: 'inline-block', textAlign: 'center'}}>
                     <img onError={(e ,err) => console.log(e, err)} style={{width: '100%',minHeight: '168px'}}  src={this.props.imgurl} alt={title}/>
                     <div>
                         <div style={{height: '40px'}}>

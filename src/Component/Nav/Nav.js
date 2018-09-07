@@ -33,7 +33,7 @@ class HeaderNav extends PureComponent {
                 {
                     context => (
                         <div>
-                            <Menu selectedKeys={Number(context.page) < 5 ? [context.page] : []} style={{marginLeft: '15%', maxWidth:'500px', display: 'inline-block'}} theme='dark' mode='horizontal'>
+                            {/* <Menu selectedKeys={Number(context.page) < 5 ? [context.page] : []} style={{marginLeft: '15%', maxWidth:'500px', display: 'inline-block'}} theme='dark' mode='horizontal'>
                                 <Item key='1' onClick={() => context.handleChangePage('1')} >
                                     <Link to={'/home'}>
                                         <span><Icon type="home"/>主页</span>
@@ -49,7 +49,7 @@ class HeaderNav extends PureComponent {
                                         <span><Icon type="solution"/>电影</span>
                                     </Link>
                                 </Item>
-                            </Menu>
+                            </Menu> */}
                             <span className={'searchWrapper'}>
                                 <input placeholder={'这里可以搜索电影哦'} value={this.state.input} onChange={this.handleInput} className={'search'} type="text"/>
                                 <span onClick={ () => { context.handleChangePage('5'); this.handleClick()}}>

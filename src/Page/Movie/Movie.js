@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Server from '../../Server/server.js';
-import {Divider, Spin } from "antd";
+import {Divider, Spin, Icon } from "antd";
 import MovieItem from '../../Component/Movie/MovieItem.js';
 
 class Movie extends PureComponent {
@@ -56,8 +56,8 @@ class Movie extends PureComponent {
                 <div className='content'>
                     {
                         this.state.movies.length > 0 ? this.state.movies.map( (item, index) => (
-                            <MovieItem key={index} id={item.id} rate={item.rating.average} imgurl={item.images.small} title={item.title}/>
-                        )): <div style={{textAlign: 'center'}}><Spin size='large'/></div>
+                            <MovieItem style={{display: 'inline'}} key={index} id={item.id} rate={item.rating.average} imgurl={item.images.small} title={item.title}/>
+                        )): <div style={{textAlign: 'center'}}><Spin indicator={ <Icon type='loading'/> } size='large'/></div>
                     }
                 </div>
                 <div className={'topTitle'}>
@@ -68,7 +68,7 @@ class Movie extends PureComponent {
                     {
                        this.state.NAMovies.length > 0 ? this.state.NAMovies.map( (item, index) => (
                             <MovieItem key={index} id={item.subject.id} rate={item.subject.rating.average} imgurl={item.subject.images.small} title={item.subject.title}/>
-                        )) : <div style={{textAlign: 'center'}}><Spin  size='large'/></div>
+                        )) : <div style={{textAlign: 'center'}}><Spin indicator={ <Icon type='loading'/> } size='large'/></div>
                     }
                 </div>
             </div>

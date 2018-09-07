@@ -1,0 +1,9 @@
+.mySider {
+    float: left;
+}
+
+@media (max-width: 747px) {
+    .mySider {
+        display: none;
+    }
+}

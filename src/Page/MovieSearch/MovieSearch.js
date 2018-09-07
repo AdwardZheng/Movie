@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
-import { Divider, Spin } from "antd";
+import { Divider, Spin, BackTop } from "antd";
 import { SearchContext } from "../../Context/context";
 import Server from '../../Server/server';
 
@@ -16,6 +16,7 @@ class MovieSearch extends PureComponent {
 
     componentDidMount() {
         this.getSearchList();
+        document.documentElement.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps) {
@@ -54,7 +55,7 @@ class MovieSearch extends PureComponent {
                         {
 
                             return (
-                                <MovieItem key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
+                                <MovieItem style={{display: 'inline-block'}} key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
                             )
                         })
                     }

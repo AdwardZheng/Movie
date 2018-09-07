@@ -14,6 +14,7 @@ class MovieDetail extends PureComponent {
 
     componentDidMount() {
         this.getMovieDetail();
+        document.documentElement.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps) {
@@ -43,7 +44,7 @@ class MovieDetail extends PureComponent {
         return (
             this.state.loading 
             ? <div style={{textAlign: 'center'}}><Spin size={'large'}/></div>
-            : <div className={'wrapper'}>
+            : <div className={'movieDetailWrapper'}>
                 <h1>
                     <span>{detail.title}</span>
                     <span>{`(${detail.year})`}</span>
@@ -76,7 +77,7 @@ class MovieDetail extends PureComponent {
                             {
                                 detail.casts.map((item, index) => (
                                     <div className={'item'} key={index}>
-                                        <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+item.avatars.small.substring(7)} alt={item.name}/>
+                                        {item.avatars ? <img style={{maxHeight: '180px'}} src={'https://images.weserv.nl/?url='+item.avatars.small.substring(7)} alt={item.name}/> : <div>暂无</div>} 
                                         <br/>
                                         <span>{item.name}</span>
                                     </div>

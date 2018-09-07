@@ -2,3 +2,9 @@
     width: 100%;
     /* background-color: aquamarine; */
 }
+
+@media (max-width: 767px) {
+    .sider {
+        display: none;
+    }
+}
