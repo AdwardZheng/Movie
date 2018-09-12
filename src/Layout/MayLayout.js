@@ -14,7 +14,7 @@ class MyLayout extends PureComponent {
         const {Header, Content, Sider, Footer} = Layout;
         return(
             <Layout style={{height: '100%'}}>
-                <Header style={{height: '160px', backgroundColor: '#fff', padding: 0}}> 
+                <Header style={{ backgroundColor: '#fff', padding: 0, height: 'auto'}}> 
                     <MyHeader handleChangeSearch={this.handleChangeSearch}/>
                 </Header>
                 <Layout>

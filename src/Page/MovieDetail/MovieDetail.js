@@ -1,15 +1,19 @@
 import React, { PureComponent } from "react";
-import { Spin, Rate, Icon } from 'antd';
+import { Rate, Icon } from 'antd';
+import Loading from '../../Component/Common/loading.js';
 import Server from "../../Server/server";
-import './MovieDetail.css';
+import { PageContext } from "../../Context/context";
+import './index.css';
 
 class MovieDetail extends PureComponent {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             loading: true,
             detail: {},
         }
+        this.props.handleUpdatePage('movieDetail');
     }
 
     componentDidMount() {
@@ -18,8 +22,9 @@ class MovieDetail extends PureComponent {
     }
 
     componentDidUpdate(prevProps) {
-        console.log(prevProps);
         if (prevProps.match.params.id !== this.props.match.params.id) {
+            console.log(prevProps.match.params.id);
+            console.log(this.props.match.params.id);
             this.getMovieDetail();
         }
     }
@@ -43,7 +48,7 @@ class MovieDetail extends PureComponent {
         console.log(detail);
         return (
             this.state.loading 
-            ? <div style={{textAlign: 'center'}}><Spin size={'large'}/></div>
+            ? <Loading/>
             : <div className={'movieDetailWrapper'}>
                 <h1>
                     <span>{detail.title}</span>
@@ -91,4 +96,9 @@ class MovieDetail extends PureComponent {
     }
 }
 
-export default MovieDetail;
+export default props =>
+<PageContext.Consumer>
+    {
+        context => <MovieDetail {...props} handleUpdatePage = {context.updatePage}/>
+    }
+</PageContext.Consumer>;

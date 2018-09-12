@@ -1,26 +1,28 @@
 .Header {
     background-color: #f0f3f5;
     height: 100%;
+    position: relative;
 }
  
 .Header .title {
     margin-left: 15%;
-    width: 260px;
-    height: 110px;
+    width: 260px;;
 }
 
 .Header .title .logo {
     color: #66ccff;
-    height: 45px;
     font-size: 30px;
-    line-height: 45px;
     border-bottom: 3px;
     border-bottom: 1px solid #ffffff;
 }
 
 .Header .title .dsc {
-    height: 25px;
-    line-height: 25px;
     font-size: 20px;
     color: #27a;
+}
+
+@media (max-width: 747px) {
+    .Header .title {
+        margin-left: 0;
+    }
 }

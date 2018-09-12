@@ -1,0 +1,10 @@
+.movie {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+@media (max-width: 746px) {
+    .movie .content {
+        text-align: center;
+    }
+}

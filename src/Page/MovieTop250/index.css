@@ -1,0 +1,15 @@
+.backTop {
+    right: 100px;
+    bottom: 100px;
+}
+
+@media (max-width: 746px) {
+    .content {
+        text-align: center;
+    }
+    .backTop {
+        position: fixed;
+        right: 10px;
+        bottom: 30px;
+    }
+}

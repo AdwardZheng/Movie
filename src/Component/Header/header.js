@@ -8,11 +8,9 @@ class Header extends PureComponent {
             <div className={'Header'}>
                 <div className={'title'}>
                     <div className={'logo'}>
-                        <span>Just Blog</span>
+                        <span>电影</span>
                     </div>
-                    <div>
-                        <span className={'dsc'}>记录</span>
-                    </div>
+                    <span className={'dsc'}>豆瓣</span>
                 </div>
                 <Nav handleChangeSearch = {this.props.handleChangeSearch}/>
             </div>

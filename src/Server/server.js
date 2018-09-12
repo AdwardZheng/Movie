@@ -6,6 +6,7 @@ const url = {
     us_box: 'https://node-douban-api.herokuapp.com/movie/us_box',
     search: 'https://node-douban-api.herokuapp.com/movie/search',
     subject: 'https://node-douban-api.herokuapp.com/movie/subject',
+    willComing: 'https://node-douban-api.herokuapp.com/movie/coming_soon',
 }
 
 let server = {
@@ -34,6 +35,11 @@ let server = {
             method: 'get',
             params: '',
             url: url.subject + `/${id}`
+        });
+    },
+    willComing: (params) => {
+        return axios(url.willComing,{
+            params: params,
         });
     }
 };

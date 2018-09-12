@@ -6,6 +6,14 @@ export const SearchContext = React.createContext({
 });
 
 export const PageContext = React.createContext({
-    page: '1',
+    page: 'home',
     updatePage: () => {},
+});
+
+export const MovieListContext = React.createContext({
+    MovieComing:[],
+    MovieTop250:[],
+    MovieInTheater:[],
+    MovieUSBox:[],
+    updateMovieList: () =>{},
 });

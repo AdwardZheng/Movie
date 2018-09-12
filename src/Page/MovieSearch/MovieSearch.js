@@ -1,8 +1,10 @@
 import React, { PureComponent } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
-import { Divider, Spin, BackTop } from "antd";
-import { SearchContext } from "../../Context/context";
+import { Divider } from "antd";
+import Loading from '../../Component/Common/loading.js';
+import { SearchContext, PageContext } from "../../Context/context";
 import Server from '../../Server/server';
+import './index.css';
 
 class MovieSearch extends PureComponent {
     constructor(props) {
@@ -10,13 +12,14 @@ class MovieSearch extends PureComponent {
         this.state = {
             movieList: [],
             loading: false,
+            loadMore: false,
         };
         console.log(this.props.searchName);
+        this.props.handleUpdatePage('search');
     }
 
     componentDidMount() {
         this.getSearchList();
-        document.documentElement.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps) {
@@ -41,19 +44,46 @@ class MovieSearch extends PureComponent {
         });
     }
 
+    handleWheel = () => {
+        console.log('wwww');
+        if((document.documentElement.clientHeight + document.documentElement.scrollTop) >= document.documentElement.scrollHeight) {
+            if(!this.state.loadMore) {
+                console.log('aaaa');
+                this.setState({
+                    loadMore: true,
+                })
+                this.getTop();
+            }
+        }
+    }
+
+    getTop() {
+        Server.top250({
+            start: 0,
+            count: 9,
+        }).then(result => {
+            const movies = result.data.subjects;
+            if (movies) {
+                this.setState({
+                    movieList: this.state.movieList.concat(movies),
+                    loadMore: false,
+                });
+            }
+        });
+    }
+
     render() {
         return (
-            <div>
+            <div onWheel={this.handleWheel} onTouchMove={this.handleWheel}>
                 <div className='topTitle'>
                     <span>搜索结果：{this.props.searchName}</span>
                 </div>
                 <div className='content'>
                     {
                         this.state.loading
-                        ? <div style={{textAlign: 'center'}}> <span>根据网络情况不同，可能会等待较长时间</span><br/><Spin size='large'/></div>
+                        ? <Loading title='根据网络情况不同，可能会等待较长时间'/>
                         : this.state.movieList.map((item, index) => 
                         {
-
                             return (
                                 <MovieItem style={{display: 'inline-block'}} key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
                             )
@@ -69,7 +99,15 @@ class MovieSearch extends PureComponent {
 export default props => (
     <SearchContext.Consumer>
         {
-            context => <MovieSearch {...props} searchName={context.searchName}/>
+            context => (
+                <PageContext>
+                    {
+                        ({updatePage}) => (
+                            <MovieSearch {...props} searchName={context.searchName} handleUpdatePage={updatePage}/>
+                        )
+                    }
+                </PageContext>
+            )
         }
     </SearchContext.Consumer>
 );
