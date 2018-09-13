@@ -1,4 +1,4 @@
-import {UPDATE_INTHEATER_LIST, UPDATE_USTHEATER_LIST, UPDATE_TOP250_LIST, UPDATE_TOP250_END} from '../actions/movieAction'
+import {UPDATE_INTHEATER_LIST, UPDATE_USTHEATER_LIST, UPDATE_TOP250_LIST, LOADING_TOP250, LOADMORE_TOP250} from '../actions/movieAction'
 import { combineReducers } from "redux";
 
 const initialInTheaterState = {
@@ -27,6 +27,8 @@ const Intheater = (state=initialInTheaterState,action) => {
 const initialTop250State = {
     top250List: [],
     top250End:0, 
+    loading: false,
+    loadMore: false,
 } 
 
 const Top250 = (state=initialTop250State, action) => {
@@ -34,12 +36,20 @@ const Top250 = (state=initialTop250State, action) => {
         case UPDATE_TOP250_LIST:
             return {
                 ...state,
-                top250List: [...state.top250List, ...action.list]
+                top250List: [...state.top250List, ...action.list],
+                top250End: action.end,
+                loading: false,
+                loadMore: false,
             }
-        case UPDATE_TOP250_END:
+        case LOADING_TOP250:
             return {
                 ...state,
-                top250End: action.endCount
+                loading: action.loading,
+            }
+        case LOADMORE_TOP250:
+            return {
+                ...state,
+                loadMore: action.loadMore,
             }
         default:
             return state;

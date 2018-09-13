@@ -10,10 +10,6 @@ import { PageContext } from "../../Context/context";
 class MovieTop extends PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            loading: false,
-            loadMore: false,
-        };
         this.props.handleUpdatePage('top250');
     }
 
@@ -24,41 +20,20 @@ class MovieTop extends PureComponent {
     }
 
     getSearchList() {
-        this.setState({
-            loading: true,
-        })
+        this.props.changeLoading(true);
         this.getTop();
     }
 
     handleWheel = () => {
-            if(!this.state.loadMore) {
-                this.setState({
-                    loadMore: true,
-                })
+            if(!this.props.loadMore) {
+                this.props.changeLoadMore(true);
                 this.getTop();
             }
     }
 
     getTop() {
-        Server.top250({
-            start: this.props.Top250End,
-            count: 11,
-        }).then(result => {
-            const movies = result.data.subjects;
-            if (movies) {
-                this.setState({
-                    loadMore: false,
-                    loading: false,
-                });
-                this.props.onUpdateHandle(movies);
-                this.props.onUpdateEndHandle(this.props.Top250End+11);
-            } else {
-                this.setState({
-                    loadMore: false,
-                    loading: false,
-                });
-            }
-        });
+        this.props.getList(this.props.Top250End);
+        this.setState({loadMore: false,loading: false,});
     }
 
     render() {
@@ -70,7 +45,7 @@ class MovieTop extends PureComponent {
                 <Divider/>
                 <div className='content'>
                     {
-                        this.state.loading
+                        this.props.loading
                         ? <Loading title="根据网络情况不同，可能会等待较长时间"/>
                         : this.props.Top250List.map((item, index) => 
                         {
@@ -80,7 +55,7 @@ class MovieTop extends PureComponent {
                             )
                         })
                     }
-                    {this.state.loadMore ? <Loading title='加载中'/> : null}
+                    {this.props.loadMore ? <Loading title='加载中'/> : null}
                 </div>
                 <Divider/>
                 <BackTop className='backTop'/>

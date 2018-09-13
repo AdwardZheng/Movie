@@ -11,6 +11,7 @@ const url = {
 
 let server = {
     top250: ( params) => {
+        console.log('ssss');
         return axios(url.top250,{
             params: params
         });

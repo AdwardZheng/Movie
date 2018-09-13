@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {updateTop250List, updateTop250End} from '../actions/movieAction';
+import {getTop250List, logingTop250, loadMoreTop250} from '../actions/movieAction';
 import MovieComponent from '../Page/MovieTop250/MovieTop';
 
 
@@ -7,16 +7,21 @@ const mapStateToProps = state => {
     return {
         Top250List: state.Top250.top250List,
         Top250End: state.Top250.top250End,
+        loading: state.Top250.loading,
+        loadMore: state.Top250.loadMore,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateHandle: list => {
-            dispatch(updateTop250List(list));
+        getList: end => {
+            dispatch(getTop250List(end));
+        } ,
+        changeLoading: loading => {
+            dispatch(logingTop250(loading));
         },
-        onUpdateEndHandle: endCount => {
-            dispatch(updateTop250End(endCount));
+        changeLoadMore: loadMore => {
+            dispatch(loadMoreTop250(loadMore));
         }
     }
 }
