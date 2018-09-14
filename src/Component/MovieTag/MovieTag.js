@@ -7,30 +7,20 @@ import Loading from '../Common/loading.js';
 class MovieTag extends PureComponent {
     constructor() {
         super();
-        this.state = {
-            movies: [],
-        }
-        Server.top250({
-            start: 0,
-            count: 9,
-        }).then(result => {
-            const movies = result.data.subjects;
-            if (movies) {
-                this.setState({
-                    movies: movies,
-                });
-            }
-        });
+    }
+
+    componentDidMount() {
+        this.props.getList(0);
     }
 
     render() {
         return (
-        this.state.movies.length === 0 ?
+        this.props.list.length === 0 ?
         <Loading title='加载中'/> :
         <List 
             header='top10'
             itemLayout="horizontal"
-            dataSource={this.state.movies}
+            dataSource={this.props.list.slice(0,10)}
             renderItem = {
                 item => {
                     return (

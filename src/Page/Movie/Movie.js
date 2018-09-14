@@ -54,7 +54,7 @@ class Movie extends PureComponent {
         return (
             <div className='movie'>
                 <div className={'topTitle'}>
-                    <span>正在上映电影</span>
+                    <span>正在上映:</span>
                 </div>
                 <Divider/>
                 <div className='content'>

@@ -38,7 +38,6 @@ class HeaderNav extends PureComponent {
                                     <Item key='home' style={{padding: '0 10px'}}><NavLink to='/'>热映</NavLink></Item>
                                     <Item key='top250' style={{padding: '0 10px'}}><Link to='/movie/top250'>Top250</Link></Item>
                                     <Item key='comingSoon' style={{padding: '0 10px'}}><Link to='/movie/movieComing'>即将上映</Link></Item>
-                                    <Item key='hot' style={{padding: '0 10px'}}>热门</Item>
                                 </Menu>
                             </div>
                             <span className={'searchWrapper'}>

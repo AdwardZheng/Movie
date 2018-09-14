@@ -1,11 +1,11 @@
 import  React, { PureComponent } from "react";
 import './Sider.css';
-import MovieTag from "../MovieTag/MovieTag.js";
+import MovieTag from "../../container/MovieTag";
 class Sider extends PureComponent {
     render() {
         return (
             <div className='sider' >
-                {/* <MovieTag/> */}
+                <MovieTag/>
             </div>
         );
     }

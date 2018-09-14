@@ -12,6 +12,9 @@ function* getList(action) {
             }
             return {list: [], end: action.end};
         })
+        .catch(err => {
+            console.log(err);
+        })
     );
     yield put({type: UPDATE_TOP250_LIST, ...data});
 }

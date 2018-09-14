@@ -1,3 +1,8 @@
+.movieComing {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 @media (max-width: 746px) {
     .content {
         text-align: center;

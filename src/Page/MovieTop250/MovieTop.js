@@ -33,32 +33,33 @@ class MovieTop extends PureComponent {
 
     getTop() {
         this.props.getList(this.props.Top250End);
-        this.setState({loadMore: false,loading: false,});
     }
 
     render() {
         return (
             <LoadMore handleLoadMore={this.handleWheel}>
-                <div className='topTitle'>
-                    <span>Top250:</span>
-                </div>
-                <Divider/>
-                <div className='content'>
-                    {
-                        this.props.loading
-                        ? <Loading title="根据网络情况不同，可能会等待较长时间"/>
-                        : this.props.Top250List.map((item, index) => 
+                <div className='movieTop250'>
+                    <div className='topTitle'>
+                        <span>Top250:</span>
+                    </div>
+                    <Divider/>
+                    <div className='content'>
                         {
+                            this.props.loading
+                            ? <Loading title="根据网络情况不同，可能会等待较长时间"/>
+                            : this.props.Top250List.map((item, index) => 
+                            {
 
-                            return (
-                                <MovieItem style={{display: 'inline-block'}} key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
-                            )
-                        })
-                    }
-                    {this.props.loadMore ? <Loading title='加载中'/> : null}
+                                return (
+                                    <MovieItem style={{display: 'inline-block'}} key={index} id={item.id} title={item.title} imgurl={item.images.small} rate={item.rating.average}/>
+                                )
+                            })
+                        }
+                        {this.props.loadMore ? <Loading title='加载中'/> : null}
+                    </div>
+                    <Divider/>
+                    <BackTop className='backTop'/>
                 </div>
-                <Divider/>
-                <BackTop className='backTop'/>
             </LoadMore>
         );
     }

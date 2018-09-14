@@ -20,17 +20,7 @@ class MyApp extends Component {
         this.state = {
             page: 'home',
             searchName: '',
-            MovieComing:[],
-            MovieTop250:[],
-            MovieInTheater:[],
-            MovieUSBox:[],
         }
-    }
-
-    onCollapse = (collapsed, type) => {
-        this.setState({
-            collapsed: collapsed,
-        });
     }
 
     handleChangeSearchName = name => {
@@ -47,13 +37,6 @@ class MyApp extends Component {
         });
     }
 
-    handleUpdateMovieList = (ListName, list) => {
-        this.setState({
-            [ListName]: list
-        });
-        console.log(this.state[ListName]);
-    }
-
 
     render() {
         return (
@@ -65,11 +48,11 @@ class MyApp extends Component {
                                 return (
                                     <MyLayout history={history} location={location}>
                                         <Switch>
-                                            <Route exact path="/" render={() => <Movie MovieUSBox={this.state.MovieUSBox} MovieInTheater={this.state.MovieInTheater} handleUpdateMovieList={this.handleUpdateMovieList}/>}/>
+                                            <Route exact path="/" render={() => <Movie/>}/>
                                             <Route exact path="/search" component={Search}/>
                                             <Route exact path="/search/:movieName" component={Search}/>
                                             <Route exact path="/movie" component={Movie}/>
-                                            <Route exact path="/movie/top250" render={() => <MovieTop MovieTop250={this.state.MovieTop250} handleUpdateMovieList={this.handleUpdateMovieList}/>}/>
+                                            <Route exact path="/movie/top250" render={() => <MovieTop/>}/>
                                             <Route exact path="/movie/movieComing" render={() => <MovieComing mobxStore={comingStore} /> }/>
                                             <Route exact path="/movie/:id" component={MovieDetail}/>
                                         </Switch>

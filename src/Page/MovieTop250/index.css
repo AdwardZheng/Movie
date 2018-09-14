@@ -1,3 +1,8 @@
+.movieTop250 {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 .backTop {
     right: 100px;
     bottom: 100px;
