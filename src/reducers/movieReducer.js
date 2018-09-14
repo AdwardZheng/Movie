@@ -1,10 +1,11 @@
-import {UPDATE_INTHEATER_LIST, UPDATE_USTHEATER_LIST, UPDATE_TOP250_LIST, LOADING_TOP250, LOADMORE_TOP250} from '../actions/movieAction'
+import {UPDATE_INTHEATER_LIST, UPDATE_USTHEATER_LIST, UPDATE_TOP250_LIST, LOADING_TOP250, LOADMORE_TOP250} from '../Actions/movieAction'
 import { combineReducers } from "redux";
+//处理action,注意每次只能返回一个新的数据，且必须保持纯净性,不能有其他操作
 
+//InTheater初始数据
 const initialInTheaterState = {
     inTheaterList:[],
-    inUSTheaterList:[],
-    
+    inUSTheaterList:[],  
 }
 
 const Intheater = (state=initialInTheaterState,action) => {
@@ -24,6 +25,7 @@ const Intheater = (state=initialInTheaterState,action) => {
     }
 }
 
+//top250初始数据
 const initialTop250State = {
     top250List: [],
     top250End:0, 
@@ -55,7 +57,7 @@ const Top250 = (state=initialTop250State, action) => {
             return state;
     }
 }
-
+//合并多个reducer
 const rootReducer = {
     Intheater: Intheater,
     Top250: Top250,

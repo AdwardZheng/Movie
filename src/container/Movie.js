@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import {updateInTheaterList, updateUSTheaterList} from '../actions/movieAction';
+import {updateInTheaterList, updateUSTheaterList} from '../Actions/movieAction';
 import MovieComponent from '../Page/Movie/Movie';
 
 
 const mapStateToProps = state => {
-    console.log(state);
+    //console.log(state);
     return {
         inTheaterList: state.Intheater.inTheaterList,
         inUSTheaterList: state.Intheater.inUSTheaterList,

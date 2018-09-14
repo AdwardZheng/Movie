@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MovieTag from "../Component/MovieTag/MovieTag";
-import { getTop250List } from '../actions/movieAction';
+import { getTop250List } from '../Actions/movieAction';
 
 const mapStateToProps = state => {
     return {

@@ -1,13 +1,9 @@
 import React, { PureComponent } from "react";
 import { List } from 'antd';
 import { Link } from "react-router-dom";
-import Server from '../../Server/server';
 import Loading from '../Common/loading.js';
 
 class MovieTag extends PureComponent {
-    constructor() {
-        super();
-    }
 
     componentDidMount() {
         this.props.getList(0);

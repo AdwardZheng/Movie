@@ -6,6 +6,17 @@ React，react-router，antd，axios，redux，redux-saga，mobx
 以es6为主，在某些地方会使用es7的decorator和async，await
 支持响应式布局，完善移动端适配
 
+### 关于mobox
+另一种状态管理工具，如果懂redux的话入门相当容易  
+- @observable: 可简单理解为定义redux中state里的数据
+- @computed：基于observable计算的衍生的数据
+- @action：在mobx严格模式下更改observable数据必须使用action，相当于reducer，不过不需要action直接调用即可
+
+### 关于redux-saga
+redux-saga是一个处理redux异步操作的中间件，主要是基于generator  
+其原理是在action => reducer这个过程中用redux-saga进行处理即action => redux-saga => reducer  
+我们在redux-saga中对网络请求等异步操作进行集中处理
+
 ### 关于Redux和Context
 9.12更新： 引入redux后发现，redux相对ContextApi更加有条理，同时避免了使用Context多层嵌套的问题
 

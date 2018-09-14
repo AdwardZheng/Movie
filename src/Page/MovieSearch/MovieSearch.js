@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
-import { Divider } from "antd";
+import { Divider,BackTop } from "antd";
 import Loading from '../../Component/Common/loading.js';
 import { SearchContext, PageContext } from "../../Context/context";
 import Server from '../../Server/server';
@@ -91,6 +91,7 @@ class MovieSearch extends PureComponent {
                     }
                 </div>
                 <Divider/>
+                <BackTop className='backTop'/>
             </div>
         );
     }

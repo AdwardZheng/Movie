@@ -3,7 +3,6 @@ import MovieItem from "../../Component/Movie/MovieItem";
 import { Divider, BackTop } from "antd";
 import './index.css';
 import LoadMore from '../../Component/Common/loadMore.js';
-import Server from '../../Server/server';
 import Loading from '../../Component/Common/loading.js';
 import { PageContext } from "../../Context/context";
 

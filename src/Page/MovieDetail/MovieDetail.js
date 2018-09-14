@@ -23,8 +23,6 @@ class MovieDetail extends PureComponent {
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            console.log(prevProps.match.params.id);
-            console.log(this.props.match.params.id);
             this.getMovieDetail();
         }
     }
@@ -45,7 +43,6 @@ class MovieDetail extends PureComponent {
 
     render() {
         const detail = this.state.detail;
-        console.log(detail);
         return (
             this.state.loading 
             ? <Loading/>
@@ -71,6 +68,8 @@ class MovieDetail extends PureComponent {
                             <span>又名：{detail.aka.join('/')}</span>
                             <br/>
                             <Rate character={<Icon type='heart'/>} allowHalf disabled value={Math.round((detail.rating.average/2)%0.5 === 0 ? detail.rating.average/2 : Math.round(detail.rating.average/2))} style={{fontSize: '10px', color: 'red', marginTop: '3px'}} />
+                            <br/>
+                            <span>{detail.rating.average}</span>
                         </div>
                         <div className={'relatedInfo'}>
                             <i>{`${detail.title}的简介......`}</i>

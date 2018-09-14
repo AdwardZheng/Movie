@@ -1,6 +1,6 @@
 import  React, { PureComponent } from "react";
 import './Sider.css';
-import MovieTag from "../../container/MovieTag";
+import MovieTag from "../../Container/MovieTag";
 class Sider extends PureComponent {
     render() {
         return (

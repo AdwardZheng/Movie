@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Layout } from "antd";
 import MyHeader from "../Component/Header/header.js";
-import MySider from "../Component/Side/Sider.js";
+import MySider from "../Component/Sider/Sider.js";
 import './style.css';
 
 class MyLayout extends PureComponent {

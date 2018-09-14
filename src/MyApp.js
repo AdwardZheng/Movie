@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
-import { SearchContext, PageContext, MovieListContext } from "./Context/context";
+import { SearchContext, PageContext } from "./Context/context";
 // import Movie  from './Page/Movie/Movie.js';
-import Movie from './container/Movie';
+import Movie from './Container/Movie';
 import Search from './Page/MovieSearch/MovieSearch.js';
 import MyLayout from './Layout/MayLayout';
 import MovieDetail from "./Page/MovieDetail/MovieDetail";
 // import MovieTop from './Page/MovieTop250/MovieTop.js';
-import MovieTop from "./container/MovieTop250";
+import MovieTop from "./Container/MovieTop250";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MovieComing from './Page/MovieComing/MovieComing';
 import comingStore from './mobxStore/store';

@@ -4,7 +4,7 @@ configure({enforceActions: 'always'});
 class Store {
     @observable comingList = [];
     @observable comingEnd = 0;
-    @observable isLoading = false;
+    @observable loading = false;
     @observable loadMore = false;
 
     constructor() {
@@ -20,11 +20,17 @@ class Store {
         this.comingList = [...this.comingList, ...list];
     }
 
+    @action
+    updateComingend = () => {
+        this.comingEnd = this.comingEnd + 9;
+    }
+
     @action  
     getList = async() => {
-        this.isLoadMore ? this.changeLoding(true) : this.changeLoadMore(true);
+        if(this.loading || this.loadMore) return;
+        this.isLoadMore ? this.changeLoadMore(true) : this.changeLoding(true);
         const data = await Server.willComing({
-            start: 0,
+            start: this.comingEnd,
             count: 9,
         }).then(result => {
             const movies = result.data.subjects;
@@ -33,15 +39,15 @@ class Store {
             console.log(err);
         });
         runInAction(() => {
-            console.log(data);
             this.updateList(data);
+            this.updateComingend();
             this.endLoad();
         })   
     }
 
     @action 
     changeLoding = (bol) => {
-        this.isLoading = bol;
+        this.loading = bol;
     }
     @action 
     changeLoadMore = (bol) => {

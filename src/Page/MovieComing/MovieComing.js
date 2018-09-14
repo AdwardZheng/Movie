@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
-import { Divider } from "antd";
+import { Divider,BackTop } from "antd";
 import './index.css';
 import LoadMore from '../../Component/Common/loadMore';
-import Server from '../../Server/server';
 import Loading from '../../Component/Common/loading';
 import { PageContext } from "../../Context/context";
 import {observer} from 'mobx-react';
@@ -32,7 +31,7 @@ class MovieComing extends Component {
             <LoadMore handleLoadMore={this.handleLoadMore}>
                 <div className='movieComing'>
                     <div className='topTitle'>
-                        <span>即将上映: {this.props.mobxStore.comingList.length > 0 ? this.props.mobxStore.comingList[0].title:null}</span>
+                        <span>即将上映: </span>
                     </div>
                     <Divider/>
                     <div className='content'>
@@ -49,6 +48,7 @@ class MovieComing extends Component {
                         {this.props.mobxStore.loadMore ? <Loading title='加载中'/> : null}
                     </div>
                     <Divider/>
+                    <BackTop className='backTop'/>
                 </div>
             </LoadMore>
         );

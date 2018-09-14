@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {getTop250List, logingTop250, loadMoreTop250} from '../actions/movieAction';
+import {getTop250List, logingTop250, loadMoreTop250} from '../Actions/movieAction';
 import MovieComponent from '../Page/MovieTop250/MovieTop';
 
 
