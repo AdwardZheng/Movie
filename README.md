@@ -1,8 +1,9 @@
-# Blog
+# react豆瓣电影
 >基于create-react-app
 
 ### 技术栈
-React，antd，axios，redux   
+React，react-router，antd，axios，redux，redux-saga，mobx
+以es6为主，在某些地方会使用es7的decorator和async，await
 支持响应式布局，完善移动端适配
 
 ### 关于Redux和Context
