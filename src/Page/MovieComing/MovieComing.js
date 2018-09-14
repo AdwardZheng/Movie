@@ -1,13 +1,15 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
 import { Divider } from "antd";
 import './index.css';
 import LoadMore from '../../Component/Common/loadMore';
 import Server from '../../Server/server';
 import Loading from '../../Component/Common/loading';
-import { PageContext, MovieListContext } from "../../Context/context";
+import { PageContext } from "../../Context/context";
+import {observer} from 'mobx-react';
 
-class MovieComing extends PureComponent {
+@observer
+class MovieComing extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +47,6 @@ class MovieComing extends PureComponent {
             count: 9,
         }).then(result => {
             const movies = result.data.subjects;
-            console.log(movies);
             if (movies) {
                 this.setState({
                     movieList: this.state.movieList.concat(movies),
@@ -53,6 +54,7 @@ class MovieComing extends PureComponent {
                     movieStart: this.state.movieStart+11,
                     loading: false,
                 });
+                this.props.mobxStore.updateList(movies);
             } else {
                 this.setState({
                     loadMore: false,
@@ -66,7 +68,7 @@ class MovieComing extends PureComponent {
         return (
             <LoadMore handleLoadMore={this.handleLoadMore}>
                 <div className='topTitle'>
-                    <span>即将上映:</span>
+                    <span>即将上映: {this.props.mobxStore.comingList.length > 0 ? this.props.mobxStore.comingList[0].title:null}</span>
                 </div>
                 <Divider/>
                 <div className='content'>

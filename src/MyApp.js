@@ -11,6 +11,7 @@ import MovieDetail from "./Page/MovieDetail/MovieDetail";
 import MovieTop from "./container/MovieTop250";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MovieComing from './Page/MovieComing/MovieComing';
+import comingStore from './mobxStore/store';
 
 class MyApp extends Component {
     constructor() {
@@ -69,7 +70,7 @@ class MyApp extends Component {
                                             <Route exact path="/search/:movieName" component={Search}/>
                                             <Route exact path="/movie" component={Movie}/>
                                             <Route exact path="/movie/top250" render={() => <MovieTop MovieTop250={this.state.MovieTop250} handleUpdateMovieList={this.handleUpdateMovieList}/>}/>
-                                            <Route exact path="/movie/movieComing" component={MovieComing}/>
+                                            <Route exact path="/movie/movieComing" render={() => <MovieComing mobxStore={comingStore} /> }/>
                                             <Route exact path="/movie/:id" component={MovieDetail}/>
                                         </Switch>
                                     </MyLayout>

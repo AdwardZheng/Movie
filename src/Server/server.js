@@ -11,7 +11,6 @@ const url = {
 
 let server = {
     top250: ( params) => {
-        console.log('ssss');
         return axios(url.top250,{
             params: params
         });
@@ -44,15 +43,5 @@ let server = {
         });
     }
 };
-
-// Object.keys(url).forEach((type) => {
-//     server[type] = (reqType, params, id) => {
-//         return axios({
-//             method: type,
-//             data: params,
-//             url: url[type]
-//         });
-//     }
-// });
 
 export default server;
