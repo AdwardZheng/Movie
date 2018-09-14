@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import './index.css';
 import { SearchContext, PageContext } from "./Context/context";
 // import Movie  from './Page/Movie/Movie.js';

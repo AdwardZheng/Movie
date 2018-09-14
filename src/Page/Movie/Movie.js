@@ -4,7 +4,7 @@ import {Divider,BackTop } from "antd";
 import MovieItem from '../../Component/Movie/MovieItem.js';
 import Loading from '../../Component/Common/loading';
 import { PageContext } from "../../Context/context";
-import './index.css';
+import './index.less';
 
 class Movie extends PureComponent {
     constructor(props) {

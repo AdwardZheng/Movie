@@ -6,6 +6,19 @@ React，react-router，antd，axios，redux，redux-saga，mobx
 以es6为主，在某些地方会使用es7的decorator和async，await  
 支持响应式布局，完善移动端适配
 
+### 关于引入less
+如果使用了antd的样式而报错，简单的处理方法是:  
+`import 'antd/dist/antd.less'; `  
+因为less的版本已经是3.x，所以在修改配置时，需要在less-loader开启javascript即  
+`
+{
+    loader: require.resolve('less-loader'),
+    options: {
+        javascriptEnabled: true
+    }
+}
+`
+
 ### 关于mobox
 另一种状态管理工具，如果懂redux的话入门相当容易  
 - @observable: 可简单理解为定义redux中state里的数据
