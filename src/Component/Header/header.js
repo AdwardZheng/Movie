@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import './Header.css';
+import './Header.less';
 import Nav from '../Nav/Nav';
 
 class Header extends PureComponent {

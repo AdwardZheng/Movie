@@ -5,8 +5,9 @@ import { GET_TOP250_LIST,UPDATE_TOP250_LIST} from '../Actions/movieAction';
 function* getList(action) {
     //call执行网络请求
     const data = yield call(
-        () => Server.top250({start: action.end, count: 11})
-        .then(result => {
+        () => {
+           return Server.top250({start: action.end, count: 11})
+            .then(result => {
             const movies = result.data.subjects;
             if(movies) {
                 return {list:movies, end: action.end+11}
@@ -15,9 +16,10 @@ function* getList(action) {
         })
         .catch(err => {
             console.log(err);
-        })
+        })}
     );
     //put类似于dispatch某个Action
+    console.log(data);
     yield put({type: UPDATE_TOP250_LIST, ...data});
 }
 

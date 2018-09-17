@@ -32,7 +32,7 @@ class HeaderNav extends PureComponent {
             <PageContext.Consumer>
                 {
                     context => (
-                        <div style={{margin: '0 auto'}}>
+                        <div className='navComponent' style={{margin: '0 auto'}}>
                             <div className='menu' style={{display: 'inline-block'}}>
                                 <Menu defaultSelectedKeys={['home']} selectedKeys={[context.page]} mode={'horizontal'}>
                                     <Item key='home' style={{padding: '0 10px'}}><NavLink to='/'>热映</NavLink></Item>

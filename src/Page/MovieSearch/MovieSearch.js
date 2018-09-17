@@ -4,7 +4,7 @@ import { Divider,BackTop } from "antd";
 import Loading from '../../Component/Common/loading.js';
 import { SearchContext, PageContext } from "../../Context/context";
 import Server from '../../Server/server';
-import './index.css';
+import './index.less';
 
 class MovieSearch extends PureComponent {
     constructor(props) {
@@ -20,6 +20,7 @@ class MovieSearch extends PureComponent {
 
     componentDidMount() {
         this.getSearchList();
+        document.documentElement.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps) {
@@ -74,7 +75,7 @@ class MovieSearch extends PureComponent {
 
     render() {
         return (
-            <div onWheel={this.handleWheel} onTouchMove={this.handleWheel}>
+            <div className='movieSearch' onWheel={this.handleWheel} onTouchMove={this.handleWheel}>
                 <div className='topTitle'>
                     <span>搜索结果：{this.props.searchName}</span>
                 </div>

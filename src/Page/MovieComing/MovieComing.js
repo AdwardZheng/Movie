@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
 import { Divider,BackTop } from "antd";
-import './index.css';
+import './index.less';
 import LoadMore from '../../Component/Common/loadMore';
 import Loading from '../../Component/Common/loading';
 import { PageContext } from "../../Context/context";
@@ -12,6 +12,7 @@ class MovieComing extends Component {
     constructor(props) {
         super(props);
         this.props.handleUpdatePage('comingSoon');
+        document.documentElement.scrollTop = 0;
     }
 
     componentDidMount() {

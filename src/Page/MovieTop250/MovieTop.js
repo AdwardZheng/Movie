@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import MovieItem from "../../Component/Movie/MovieItem";
 import { Divider, BackTop } from "antd";
-import './index.css';
+import './index.less';
 import LoadMore from '../../Component/Common/loadMore.js';
 import Loading from '../../Component/Common/loading.js';
 import { PageContext } from "../../Context/context";
@@ -16,6 +16,7 @@ class MovieTop extends PureComponent {
         if(this.props.Top250List.length === 0) {
             this.getSearchList();
         }
+        document.documentElement.scrollTop = 0;
     }
 
     getSearchList() {

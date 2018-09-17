@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getList: end => {
+        getList: (end) => {
             dispatch(getTop250List(end));
         } ,
         changeLoading: loading => {

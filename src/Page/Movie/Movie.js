@@ -10,6 +10,7 @@ class Movie extends PureComponent {
     constructor(props) {
         super(props);
         this.props.handleUpdatePage('home');
+        document.documentElement.scrollTop = 0;
     }
 
     componentDidMount() {

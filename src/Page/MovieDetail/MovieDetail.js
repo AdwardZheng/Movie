@@ -3,7 +3,7 @@ import { Rate, Icon } from 'antd';
 import Loading from '../../Component/Common/loading.js';
 import Server from "../../Server/server";
 import { PageContext } from "../../Context/context";
-import './index.css';
+import './index.less';
 
 class MovieDetail extends PureComponent {
     constructor(props) {

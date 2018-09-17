@@ -4,9 +4,15 @@ import { Link } from "react-router-dom";
 import Loading from '../Common/loading.js';
 
 class MovieTag extends PureComponent {
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
 
     componentDidMount() {
-        this.props.getList(0);
+        if(this.props.list.length === 0) {
+            this.props.getList(this.props.end);
+        }
     }
 
     render() {
